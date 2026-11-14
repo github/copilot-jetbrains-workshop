@@ -1,8 +1,8 @@
 # GitHub Copilot in IntelliJ IDEA: workshop
 
-Each week has a simple challenge to solve in IntelliJ IDEA with GitHub Copilot, and a separate solution that shows how, with screenshots.
+Each lesson has a simple challenge to solve in IntelliJ IDEA with GitHub Copilot, and a separate solution that shows how, with screenshots.
 
-| Week | Session | Features | Challenge | Solution |
+| Lesson | Topic | Features | Challenge | Solution |
 |---|---|---|---|---|
 | 1 | Fundamentals | Parallel sessions and worktrees, next edit suggestions | [Two features at once](01-fundamentals/README.md) | [Solution](01-fundamentals/SOLUTION.md) |
 | 2 | Tooling | Customization panel, built-in MCP server, browser use | [Free jackets](02-tooling/README.md) | [Solution](02-tooling/SOLUTION.md) |
@@ -29,11 +29,11 @@ JetBrains Marketplace still has GitHub Copilot 1.21.0. Until 1.21.1 ships, get i
 
 ## Get started
 
-Fork this repo, clone your fork, and open the folder in IntelliJ IDEA. Then start with [week 1](01-fundamentals/README.md).
+Fork this repo, clone your fork, and open the folder in IntelliJ IDEA. Then start with [lesson 1](01-fundamentals/README.md).
 
-Each week's folder has the challenge in `README.md` and the solution in `SOLUTION.md`. [.github/copilot-instructions.md](.github/copilot-instructions.md) keeps Copilot inside the week's folder, and out of the solutions. Weeks 1, 2, 4 and 5 are copies of Trail Store, a small Spring Boot store from [spring-ai-webstore](https://github.com/roryp/spring-ai-webstore). In weeks 1, 2 and 4, failing tests show what to fix. Week 5's copy is an old one, for Copilot to upgrade. The weeks don't depend on each other.
+Each lesson's folder has the challenge in `README.md` and the solution in `SOLUTION.md`. [.github/copilot-instructions.md](.github/copilot-instructions.md) keeps Copilot inside the lesson's folder, and out of the solutions. Lessons 1, 2, 4 and 5 are copies of Trail Store, a small Spring Boot store from [spring-ai-webstore](https://github.com/roryp/spring-ai-webstore). In lessons 1, 2 and 4, failing tests show what to fix. Lesson 5's copy is an old one, for Copilot to upgrade. The lessons don't depend on each other.
 
-Browser use, the cloud sandbox and Copilot Fusion are still rolling out, so you might not have them yet. You can still finish every week without them.
+Browser use, the cloud sandbox and Copilot Fusion are still rolling out, so you might not have them yet. You can still finish every lesson without them.
 
 ## Contributing
 

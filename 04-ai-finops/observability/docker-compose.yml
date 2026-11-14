@@ -1,4 +1,4 @@
-# A local OpenTelemetry trace viewer for week 4: the Aspire dashboard.
+# A local OpenTelemetry trace viewer for lesson 4: the Aspire dashboard.
 # It has no sign-in, so its ports are published on 127.0.0.1 only: other computers can't reach it.
 # Start it with: docker compose up -d · Stop it with: docker compose down
 # Dashboard: http://localhost:18888 · OTLP endpoint for Copilot: http://localhost:4318

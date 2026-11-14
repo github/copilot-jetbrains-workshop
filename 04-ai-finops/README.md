@@ -1,8 +1,8 @@
-# Week 4: AI FinOps
+# Lesson 4: AI FinOps
 
-**What does a task cost?** · Part 4 of 5 · [All weeks](../README.md)
+**What does a task cost?** · Part 4 of 5 · [All lessons](../README.md)
 
-Every Copilot task has a cost, counted in AI credits. This week, you measure what one task costs, and see how one setting changes it.
+Every Copilot task has a cost, counted in AI credits. In this lesson, you measure what one task costs, and see how one setting changes it.
 
 ## The problem
 
@@ -17,7 +17,7 @@ The task is a JSON API for the store:
 
 ### Copilot Fusion
 
-With Fusion, you don't pick a model. You pick an effort level, and Copilot picks the models. The Fusion picker shows **Standard**, **High** and **Max**. This week, if you have Fusion, compare Standard and Max. Max can use stronger models, and more than one per task, so it usually costs more. Turn on **Fusion** in the model picker, in the chat box.
+With Fusion, you don't pick a model. You pick an effort level, and Copilot picks the models. The Fusion picker shows **Standard**, **High** and **Max**. In this lesson, if you have Fusion, compare Standard and Max. Max can use stronger models, and more than one per task, so it usually costs more. Turn on **Fusion** in the model picker, in the chat box.
 
 Fusion is still rolling out, and it isn't in every plan. If it isn't in yours, leave it off, or turn it off. Pick a model, and compare it at two effort levels, such as **Medium** and **Max**, or compare two models. The per-model effort picker offers **Low**, **Medium**, **High**, **Extra High** and **Max**.
 

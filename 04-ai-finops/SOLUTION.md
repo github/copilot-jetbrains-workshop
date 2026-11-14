@@ -1,4 +1,4 @@
-# Week 4 solution: What does a task cost?
+# Lesson 4 solution: What does a task cost?
 
 How to solve [the challenge](README.md) with GitHub Copilot in IntelliJ IDEA.
 
@@ -10,7 +10,7 @@ Each run starts in a new worktree, from your last commit, so both start from the
 
    ![The Workspace menu under the chat box, with Worktree highlighted](../screenshots/01-fundamentals/worktree.png)
 
-2. Open the model picker in the chat box. If you have **Fusion**, turn it on, and choose **Standard**. The Fusion picker also offers **High**. This week, with Fusion, you use **Standard** and **Max**.
+2. Open the model picker in the chat box. If you have **Fusion**, turn it on, and choose **Standard**. The Fusion picker also offers **High**. In this lesson, with Fusion, you use **Standard** and **Max**.
 
    If Fusion isn't there, pick a model, and choose **Medium**. The per-model effort picker offers **Low**, **Medium**, **High**, **Extra High** and **Max**.
 

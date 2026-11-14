@@ -10,9 +10,9 @@
         <relativePath/>
     </parent>
     <groupId>com.contoso</groupId>
-    <artifactId>trail-store-week-1-fundamentals</artifactId>
+    <artifactId>trail-store-lesson-1-fundamentals</artifactId>
     <version>1.0.0</version>
-    <name>Trail Store - Week 1: Fundamentals</name>
+    <name>Trail Store - Lesson 1: Fundamentals</name>
     <properties>
         <java.version>25</java.version>
     </properties>

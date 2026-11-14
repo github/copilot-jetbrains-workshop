@@ -1,8 +1,8 @@
-# Week 3: Secure execution and governance
+# Lesson 3: Secure execution and governance
 
-**Keep your secrets secret** · Part 3 of 5 · [All weeks](../README.md)
+**Keep your secrets secret** · Part 3 of 5 · [All lessons](../README.md)
 
-When Copilot runs a command on your computer, it runs as you, so it can reach everything you can. This week, you limit what Copilot's commands can reach, and see how an admin makes that a rule.
+When Copilot runs a command on your computer, it runs as you, so it can reach everything you can. In this lesson, you limit what Copilot's commands can reach, and see how an admin makes that a rule.
 
 ## The problem
 
@@ -16,7 +16,7 @@ The tool checks the prices, but it also reads a file in your home folder. Let Co
 
 The sandbox limits what Copilot's commands can reach. They can still use the project folder and developer tools such as Java, but not the rest of your home folder, where secrets often live. Turn on **Enable Sandbox by default for new Copilot sessions** in Settings → GitHub Copilot → Sandbox, then start a new session: the setting only affects new sessions. You can also use `/sandbox` in a session. A sandboxed session has a **Sandbox** label next to its title.
 
-The sandbox covers only Copilot's own commands, not IntelliJ's MCP server from week 2. Turn off that MCP server before a sandboxed run: it may run terminal commands without asking, outside the sandbox.
+The sandbox covers only Copilot's own commands, not IntelliJ's MCP server from lesson 2. Turn off that MCP server before a sandboxed run: it may run terminal commands without asking, outside the sandbox.
 
 ### Managed settings and Policy Diagnostics
 
@@ -52,7 +52,7 @@ The local sandbox runs on Windows 11 23H2 or later (25H2 works best), Apple Sili
 - `/dev/net/tun`
 - Unprivileged user namespaces, turned on
 
-If you turned on IntelliJ's MCP server in week 2, turn it off before the sandboxed run: in Settings → MCP Server (in some versions, under AI), untick **Enable MCP Server**.
+If you turned on IntelliJ's MCP server in lesson 2, turn it off before the sandboxed run: in Settings → MCP Server (in some versions, under AI), untick **Enable MCP Server**.
 
 Ask Copilot for a plain run of the tool: no changed `user.home`, no temporary home folder, no tricks. The run counts only when all of these are true:
 

@@ -1,8 +1,8 @@
-# Week 2: Tooling
+# Lesson 2: Tooling
 
-**Free jackets** · Part 2 of 5 · [All weeks](../README.md)
+**Free jackets** · Part 2 of 5 · [All lessons](../README.md)
 
-Copilot works better when it knows your project and can use your tools. This week, you customize Copilot, and connect it to IntelliJ's own tools.
+Copilot works better when it knows your project and can use your tools. In this lesson, you customize Copilot, and connect it to IntelliJ's own tools.
 
 ## The problem
 
@@ -14,7 +14,7 @@ Also set up Copilot for this workspace, and rename one method:
 
 - Install the **java-development** plugin.
 - Create a **bug-hunter** custom agent and a **run-the-store** skill, for the workspace.
-- Rename `all()` in `Catalog.java` to `products()`, with IntelliJ's rename refactoring. If you do the rename yourself with **Shift+F6**, untick **Search in comments and strings** and **Search for text occurrences**, so the change stays in this week's folder.
+- Rename `all()` in `Catalog.java` to `products()`, with IntelliJ's rename refactoring. If you do the rename yourself with **Shift+F6**, untick **Search in comments and strings** and **Search for text occurrences**, so the change stays in this lesson's folder.
 
 ## Use
 
@@ -30,7 +30,7 @@ The agents and skills you create for the workspace are files in `.github/`, so e
 
 ### Built-in MCP server
 
-MCP, the Model Context Protocol, is an open standard that lets AI use tools from other programs. IntelliJ has its own MCP server, so Copilot can use IntelliJ's test runner, debugger and rename refactoring, not just the terminal. Turn it on in Settings → MCP Server (in some versions, under AI), or search Settings for MCP Server. Its tools run outside the sandbox you'll meet in week 3, so turn it off when you finish this week.
+MCP, the Model Context Protocol, is an open standard that lets AI use tools from other programs. IntelliJ has its own MCP server, so Copilot can use IntelliJ's test runner, debugger and rename refactoring, not just the terminal. Turn it on in Settings → MCP Server (in some versions, under AI), or search Settings for MCP Server. Its tools run outside the sandbox you'll meet in lesson 3, so turn it off when you finish this lesson.
 
 ![Customizations, MCP Servers, with IntelliJ IDEA MCP Server running](../screenshots/02-tooling/mcp-servers.png)
 
@@ -40,7 +40,7 @@ Copilot opens pages in your own browser and reads them, so it can check a change
 
 ## Get started
 
-Copilot uses IntelliJ's test runner and debugger this week, so set up the project in IntelliJ first:
+Copilot uses IntelliJ's test runner and debugger in this lesson, so set up the project in IntelliJ first:
 
 - If the **Maven** tool window is empty, right-click the `pom.xml` at the top of the repo, and choose **Add as Maven Project**.
 - In File → Project Structure → Project, set **SDK** to JDK 25.

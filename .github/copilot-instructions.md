@@ -1,7 +1,7 @@
 # Copilot instructions
 
-This repo is a workshop. Each week has its own folder, from `01-fundamentals` to `05-app-modernization`, with a challenge for the user to solve.
+This repo is a workshop. Each lesson has its own folder, from `01-fundamentals` to `05-app-modernization`, with a challenge for the user to solve.
 
-- Work only inside the current week's folder: the one the user names. Don't read or change files in the other weeks' folders.
-- When you use IntelliJ's rename or other refactorings, limit them to the current week's folder. Don't search comments or text occurrences.
+- Work only inside the current lesson's folder: the one the user names. Don't read or change files in the other lessons' folders.
+- When you use IntelliJ's rename or other refactorings, limit them to the current lesson's folder. Don't search comments or text occurrences.
 - Never read, search or edit any `SOLUTION.md` or `cost-report.md` file, unless the user names that file. The solutions give the challenges away, and the cost reports are for the user's own numbers.

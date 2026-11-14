@@ -1,4 +1,4 @@
-# Week 2 solution: Free jackets
+# Lesson 2 solution: Free jackets
 
 How to solve [the challenge](README.md) with GitHub Copilot in IntelliJ IDEA.
 
@@ -41,9 +41,9 @@ Open **Customizations** at the top of Chat.
    ```markdown
    ---
    name: run-the-store
-   description: Runs the tests and starts the store for one week of this workshop.
+   description: Runs the tests and starts the store for one lesson of this workshop.
    ---
-   Each week is its own app, in its own folder, like 02-tooling.
+   Each lesson is its own app, in its own folder, like 02-tooling.
    Run the tests with ./mvnw -B -ntp verify (on Windows, .\mvnw.cmd -B -ntp verify).
    Start the store with ./mvnw spring-boot:run, and open http://localhost:8080.
    ```
@@ -52,7 +52,7 @@ Open **Customizations** at the top of Chat.
 
 ## 3. Find the bug
 
-Start a new session. If the row under the chat box still says **Worktree** from week 1, click it and choose **Workspace**. Then, in the chat box, pick **bug-hunter** in the **Agent** selector. If it isn't there, restart IntelliJ, then pick it, and send:
+Start a new session. If the row under the chat box still says **Worktree** from lesson 1, click it and choose **Workspace**. Then, in the chat box, pick **bug-hunter** in the **Agent** selector. If it isn't there, restart IntelliJ, then pick it, and send:
 
 > In 02-tooling, jackets should be 20% off, but the store sells them for $0. SaleTests fails. Find out why and fix it.
 
@@ -82,7 +82,7 @@ Send:
 
 > In 02-tooling, rename the all() method in Catalog.java to products(), with IntelliJ's rename refactoring. Rename code only, without searching comments and text. Change only files in 02-tooling.
 
-IntelliJ renames the method and every call to it. If you rename it yourself with **Shift+F6**, untick **Search in comments and strings** and **Search for text occurrences**, or the rename also changes text in other weeks.
+IntelliJ renames the method and every call to it. If you rename it yourself with **Shift+F6**, untick **Search in comments and strings** and **Search for text occurrences**, or the rename also changes text in other lessons.
 
 ![Copilot's chat, showing a Rename refactoring call to intellij-idea-2026.3](../screenshots/02-tooling/rename.png)
 

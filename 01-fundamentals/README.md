@@ -1,8 +1,8 @@
-# Week 1: Fundamentals
+# Lesson 1: Fundamentals
 
-**Two features at once** · Part 1 of 5 · [All weeks](../README.md)
+**Two features at once** · Part 1 of 5 · [All lessons](../README.md)
 
-Copilot can work on more than one task at a time. This week, you run two Copilot sessions side by side, each in its own copy of the code. Then Copilot helps with your own typing, by predicting your next edit.
+Copilot can work on more than one task at a time. In this lesson, you run two Copilot sessions side by side, each in its own copy of the code. Then Copilot helps with your own typing, by predicting your next edit.
 
 ## The problem
 

@@ -1,4 +1,4 @@
-# Week 3 solution: Keep your secrets secret
+# Lesson 3 solution: Keep your secrets secret
 
 How to solve [the challenge](README.md) with GitHub Copilot in IntelliJ IDEA.
 
@@ -19,7 +19,7 @@ Reading C:\Users\you\.trail-store\canary.txt: done, it says "pretend-secret"
 
 ## 2. Run it in the sandbox
 
-If you turned on IntelliJ's MCP server in week 2, turn it off first: in Settings → MCP Server (in some versions, under AI), untick **Enable MCP Server**. The sandbox covers only Copilot's own commands, not IntelliJ's MCP server: in a sandboxed session, its `execute_terminal_command` can still read `canary.txt`, and it may run commands without asking.
+If you turned on IntelliJ's MCP server in lesson 2, turn it off first: in Settings → MCP Server (in some versions, under AI), untick **Enable MCP Server**. The sandbox covers only Copilot's own commands, not IntelliJ's MCP server: in a sandboxed session, its `execute_terminal_command` can still read `canary.txt`, and it may run commands without asking.
 
 Turn on Settings → GitHub Copilot → Sandbox → **Enable Sandbox by default for new Copilot sessions**. The setting only affects new sessions, so start a new session after you turn it on.
 

@@ -1,4 +1,4 @@
-# Week 1 solution: Two features at once
+# Lesson 1 solution: Two features at once
 
 How to solve [the challenge](README.md) with GitHub Copilot in IntelliJ IDEA.
 

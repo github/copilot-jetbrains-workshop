@@ -1,4 +1,4 @@
-# Week 5 solution: An old app, a new home
+# Lesson 5 solution: An old app, a new home
 
 How to solve [the challenge](README.md) with GitHub Copilot in IntelliJ IDEA.
 
@@ -76,7 +76,7 @@ Copilot's changes, after both prompts. Yours can differ: Copilot can pick other 
     <groupId>com.contoso</groupId>
     <artifactId>trail-store-app-modernization</artifactId>
     <version>1.0.0</version>
-    <name>Trail Store - Week 5: App modernization</name>
+    <name>Trail Store - Lesson 5: App modernization</name>
     <properties>
         <java.version>25</java.version>
         <jackson.databind.version>3.1.8</jackson.databind.version>
