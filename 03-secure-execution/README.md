@@ -48,7 +48,7 @@ The local sandbox runs on Windows 11 23H2 or later (25H2 works best), Apple Sili
 - `bubblewrap` 0.5 or later
 - `slirp4netns`
 - `util-linux` 2.35 or later
-- `iptables`
+- `iptables`, with `iptables` and `iptables-restore` on your path: some distributions put them in `/usr/sbin`, which isn't on a normal user's path
 - `/dev/net/tun`
 - Unprivileged user namespaces, turned on
 
