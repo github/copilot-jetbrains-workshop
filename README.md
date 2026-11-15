@@ -21,7 +21,7 @@ Each lesson has a simple challenge to solve in IntelliJ IDEA with GitHub Copilot
   git config --global user.email "you@example.com"
   ```
 
-JetBrains Marketplace still has GitHub Copilot 1.21.0. Until 1.21.1 ships, get it from the nightly channel, where it's 1.21.1-rc.3:
+JetBrains Marketplace still has GitHub Copilot 1.21.0. Until 1.21.1 ships, get a 1.21.1 release candidate from the nightly channel:
 
 1. In Settings → Plugins, click the gear icon, and choose **Manage Plugin Repositories**.
 2. Add `https://plugins.jetbrains.com/plugins/nightly/17718`, and click **OK**.
@@ -40,6 +40,10 @@ Browser use, the cloud sandbox and Copilot Fusion are still rolling out, so you 
 Read **The problem**, and run the tests in **Get started**. Then follow **Try it**: its prompts are ready to copy into Chat. If you get stuck, open **Hints**, and then the solution.
 
 Run each lesson's commands from its own folder. Every store uses port 8080, so stop one store before you start another.
+
+If you don't see **+**, **Customizations** or the Options menu at the top of Chat, hover over the top of Chat.
+
+In lesson 3, you turn on the sandbox for new sessions. Turn it off again when you finish that lesson: in the sandbox, Copilot can't run the other lessons' Maven builds.
 
 ## Contributing
 

@@ -75,7 +75,7 @@ The local sandbox runs on Windows 11 23H2 or later (25H2 works best), Apple Sili
 
 5. **Open Policy Diagnostics** from the Options menu at the top of Chat, in a **This computer** session. It shows what your organization manages. Settings with no managed value show `null`.
 
-6. **Clean up.** Delete the `.trail-store` folder: `rm -r ~/.trail-store` (in Windows PowerShell, `Remove-Item -Recurse "$HOME\.trail-store"`).
+6. **Clean up.** Delete the `.trail-store` folder: `rm -r ~/.trail-store` (in Windows PowerShell, `Remove-Item -Recurse "$HOME\.trail-store"`). Then, in Settings → GitHub Copilot → Sandbox, turn off **Enable Sandbox by default for new Copilot sessions**: in the sandbox, Copilot can't run the Maven builds of the other lessons.
 
 <details>
 <summary>Hints</summary>
@@ -95,5 +95,6 @@ If the sandboxed run fails with no `OK` line, the local sandbox may not work on 
 - [ ] In a sandboxed session, Copilot's own command tool ran the supplier's tool. It printed `Checked 6 prices: OK`, then couldn't read `canary.txt`, though the file is on your computer.
 - [ ] You opened Policy Diagnostics.
 - [ ] You deleted the `.trail-store` folder.
+- [ ] The sandbox is off by default again, for the other lessons.
 
 Stuck? Read the [solution](SOLUTION.md).

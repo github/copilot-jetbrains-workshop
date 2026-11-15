@@ -50,22 +50,26 @@ On Windows, use `.\mvnw.cmd -B -ntp verify`. Two tests in `ApiTests` fail: the l
 
    > In 04-ai-finops, add GET /api/products and GET /api/products/{sku}, which returns 404 for an unknown SKU. Make ApiTests pass. Don't change the tests.
 
+   If an **Uncommitted Changes** card appears, click the arrow next to **Copy Changes**, and choose **Skip Changes**: the worktree starts from your last commit.
+
 2. **Read its cost.** When Copilot is done, open **Agent Debug Logs** from the Options menu at the top of Chat, and pick the newest session. Copy the four **Summary** fields into [cost-report.md](cost-report.md). Don't click **Apply** yet.
 
-3. **Run 2.** Start another new session in **Worktree** mode. Choose Fusion **Max**, or the same model at **Max**. Send the same prompt, and copy its numbers too. If Copilot asks about uncommitted changes, choose **Skip Changes**.
+3. **Run 2.** Start another new session in **Worktree** mode. Choose Fusion **Max**, or the same model at **Max**. Send the same prompt, and if the **Uncommitted Changes** card appears, skip the changes again. When Copilot is done, copy its numbers too: in the **Agent Debug Logs** tab, click **Agent Debug Logs** at the top to go back to the list of sessions, and pick the newest.
 
-4. **Apply run 2.** In the Max session, click **Apply**. If an **Uncommitted Changes** card appears, choose **Skip**. Then run the tests again: they all pass.
+4. **Apply run 2.** In the Max session, click **Apply**, above the chat box. There's no confirmation: the list of changed files just closes. Then run the tests again: they all pass.
 
 5. **Compare.** Which run used more **Copilot Usage (AIC)**, and why? Look at the model turns, tool calls and tokens. Max usually costs more, but not always.
 
 <details>
 <summary>Hints</summary>
 
-The Java files are in `src/main/java/com/contoso/store`. `Catalog.all()` already returns the products, and `Product` already has the four fields.
+The Java files are in `src/main/java/com/contoso/store`. The `all()` method in `Catalog.java` already returns the products, and `Product` already has the four fields.
 
 A new `@RestController` for `/api/products` keeps the store's page as it is. Read the SKU with `@PathVariable`. `ResponseEntity.of(...)` returns 404 for an empty `Optional`. `ApiTests.java` shows the values the tests expect.
 
 The **Credits** below Copilot's answer are the same unit as **Copilot Usage (AIC)**.
+
+If Copilot can't run Maven, and the output says `Access is denied`, the sandbox from lesson 3 is on. In Settings → GitHub Copilot → Sandbox, turn off **Enable Sandbox by default for new Copilot sessions**, and start the run again in a new session.
 
 For traces of both runs, set up OpenTelemetry (optional) before run 1: turning on the export needs an IntelliJ restart.
 

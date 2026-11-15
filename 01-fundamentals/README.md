@@ -29,7 +29,7 @@ Two sessions in the same folder can trip over each other's changes. A git worktr
 
 ### Next edit suggestions
 
-Completions finish the line you're typing. Next edit suggestions go further: after you change one line, Copilot suggests the edit that follows from it, even in another file. Press **Tab** to jump to it, and **Tab** again to accept it. You may need to type the first category in `Catalog.java` yourself, then press **Tab** to fill in the rest. Check it's on in Settings → GitHub Copilot → Completions.
+Completions finish the line you're typing. Next edit suggestions go further: after you make an edit, Copilot suggests the edit that follows from it, even elsewhere in the file. If the suggestion is where you're typing, **Tab** accepts it. If it's somewhere else, the first **Tab** jumps to it, and the second accepts it. Check it's on in Settings → GitHub Copilot → Completions.
 
 ## Get started
 
@@ -48,15 +48,22 @@ On Windows, use `.\mvnw.cmd -B -ntp verify`. `SearchTests`, `LowStockTests` and 
 
    > In 01-fundamentals, make SearchTests pass. Change only what search needs, and run SearchTests to check.
 
+   If an **Uncommitted Changes** card appears, click the arrow next to **Copy Changes**, and choose **Skip Changes**: the worktree starts from your last commit.
+
 2. **Start the low stock session.** Don't wait for the first one to finish. Click **+** again, choose **Worktree**, and send:
 
    > In 01-fundamentals, make LowStockTests pass. Change only what low stock needs, and run LowStockTests to check.
 
-   If Copilot asks about uncommitted changes, choose **Skip Changes**. To switch between the two sessions, click **Show Sessions Side Bar** at the top of Chat.
+   If the **Uncommitted Changes** card appears, skip the changes again. To switch between the two sessions, click **Show Sessions Side Bar** at the top of Chat.
 
-3. **Apply both.** When a session finishes, click the list of changed files above the chat box, such as **1 File Changed**. Click a file to check its diff, then click **Apply**. Do the same in the other session. Now only `CategoryTests` fails.
+3. **Apply both.** When a session finishes, the files it changed are listed above the chat box. Click the arrow before the list's header, such as **1 File Changed**, to open it. Click a file to check its diff, then click **Apply**. There's no confirmation: the list just closes. Do the same in the other session. Now only `CategoryTests` fails.
 
-4. **Add the categories yourself.** In `Product.java`, add `String category` after `name`. Copilot suggests the matching changes in `Catalog.java` and `index.html`: press **Tab** to jump to each one, and **Tab** again to accept it. If no suggestion appears, type the change yourself.
+4. **Add the categories yourself.** In `Product.java`, add `String category` after `name`. Then:
+
+   - In `Catalog.java`, type the first product's category, `"Jackets",`, after its name. Copilot suggests the other five categories: press **Tab** to accept them.
+   - In `index.html`, click at the end of the `<h2>` line, and press **Enter**. Copilot suggests the category line: press **Tab** to accept it.
+
+   If no suggestion appears, type the change yourself.
 
 5. **Check.** Run the tests again: they all pass. To see the page, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`), and open <http://localhost:8080/?q=boots>.
 

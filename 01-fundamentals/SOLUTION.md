@@ -4,7 +4,7 @@ How to solve [the challenge](README.md) with GitHub Copilot in IntelliJ IDEA.
 
 ## 1. Start two sessions, each in its own worktree
 
-A worktree session starts from your last commit. If Copilot asks about uncommitted changes, choose **Skip Changes**.
+A worktree session starts from your last commit. If an **Uncommitted Changes** card appears when you send a prompt, click the arrow next to **Copy Changes**, and choose **Skip Changes**.
 
 1. At the top of Chat, click **+** to start a new session. In the row under the chat box, click **Workspace** and choose **Worktree**.
 
@@ -26,9 +26,9 @@ A worktree session starts from your last commit. If Copilot asks about uncommitt
 
 ## 2. Apply both sessions' changes
 
-When a session finishes, the files it changed are listed above the chat box. The list starts collapsed, so click its header, such as **1 File Changed**, to open it. Click a file to review the diff, then click **Apply** to copy the changes into your project. Then click the other session in the **Sessions** list and do the same.
+When a session finishes, the files it changed are listed above the chat box. The list starts collapsed, so click the arrow before its header, such as **1 File Changed**, to open it. Click a file to review the diff, then click **Apply** to copy the changes into your project. Then click the other session in the **Sessions** list and do the same.
 
-**Apply** doesn't show a confirmation when it works. To check, open a changed file in your project. **Apply** also makes a checkpoint commit, so git needs your name and email: see [What you need](../README.md#what-you-need).
+**Apply** doesn't show a confirmation when it works: the list just closes. To check, open a changed file in your project. **Apply** also makes a checkpoint commit, so git needs your name and email: see [What you need](../README.md#what-you-need).
 
 ![The search session's changed file, with Undo All and Apply](../screenshots/01-fundamentals/apply.png)
 
@@ -50,13 +50,13 @@ Do this after you apply both sessions. In Settings → GitHub Copilot → Comple
    public record Product(String sku, String name, String category, int price, int stock) {
    ```
 
-2. Copilot may suggest the matching change in `Catalog.java`. If it doesn't, type the first product's category yourself. Then press **Tab** to jump to the next suggestion, and **Tab** to accept. Keep going until every product has a category.
+2. In `Catalog.java`, type the first product's category, `"Jackets",`, after its name. Copilot suggests the categories of the other five products. Press **Tab** to accept them. If a suggestion is somewhere else in the file, the first **Tab** jumps to it, and the second accepts it.
 
    ![A next edit suggestion in Catalog.java that adds a category to the other five products](../screenshots/01-fundamentals/nes-catalog.png)
 
    *Copilot suggests the remaining categories. The arrow in the gutter means Tab accepts.*
 
-3. In `index.html`, add the category under the product's name:
+3. In `index.html`, click at the end of the `<h2>` line, and press **Enter**. Copilot suggests the category line, under the product's name. Press **Tab** to accept it:
 
    ```html
    <p class="category" th:text="${product.category()}">Jackets</p>

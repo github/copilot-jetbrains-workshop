@@ -93,6 +93,8 @@ The cloud sandbox is in preview, and rolling out in phases. In the row under the
 
 Delete the `.trail-store` folder from your home folder.
 
+Then, in Settings → GitHub Copilot → Sandbox, turn off **Enable Sandbox by default for new Copilot sessions**. In the sandbox, Copilot can't run the Maven builds of the other lessons.
+
 ## What you used
 
 - **GitHub Copilot:** the Sandbox setting, `/sandbox`, Policy Diagnostics, the cloud sandbox.

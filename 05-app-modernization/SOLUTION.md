@@ -4,7 +4,7 @@ How to solve [the challenge](README.md) with GitHub Copilot in IntelliJ IDEA.
 
 ## The steps
 
-Open `05-app-modernization` in its own window, and install the **GitHub Copilot modernization** plugin, as in the README.
+Open `05-app-modernization` in its own window, and install the **GitHub Copilot modernization** plugin, as in the README. If you turned on the sandbox in lesson 3, turn it off: in Settings → GitHub Copilot → Sandbox, untick **Enable Sandbox by default for new Copilot sessions**. In the sandbox, Copilot can't run Maven.
 
 1. **See what's vulnerable.** Choose Code → Analyze Code → **Vulnerable Dependencies**. The Problems tool window opens on its **Security** tab: in this run, the old app had 25 issues. Click a library to see its CVEs.
 

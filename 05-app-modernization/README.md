@@ -64,6 +64,8 @@ If the build says `Tests run: 0`, the tests didn't move to JUnit Jupiter. Ask Co
 
 Your libraries, versions and CVE counts can differ from the solution's: the vulnerability data changes.
 
+If Copilot can't run Maven, and the output says `Access is denied`, the sandbox from lesson 3 is on. In Settings → GitHub Copilot → Sandbox, turn off **Enable Sandbox by default for new Copilot sessions**, and start a new chat.
+
 </details>
 
 ## Done when

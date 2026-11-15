@@ -31,11 +31,13 @@ Open **Customizations** at the top of Chat.
    3. Explain the cause in one sentence, make the smallest fix, and run the test again.
    ```
 
+   Then click **Save**, at the top right of the editor.
+
    ![New Agent (Workspace), with the file name bug-hunter](../screenshots/02-tooling/new-agent.png)
 
    ![Customizations listing bug-hunter under Workspace](../screenshots/02-tooling/agent.png)
 
-   *Once you save the file, bug-hunter is listed under Workspace, with its description. If it isn't listed in the **Agent** selector, restart IntelliJ.*
+   *Once you save the file, bug-hunter is listed under Workspace, with its description.*
 
 3. **Skill.** On the left, click **Skills**. Click the arrow next to **Generate Skill**, choose **New Skill (Workspace)**, enter `run-the-store`, and click **Create**. This creates `.github/skills/run-the-store/SKILL.md`. Replace all of its text with:
 
@@ -49,11 +51,15 @@ Open **Customizations** at the top of Chat.
    Start the store with ./mvnw spring-boot:run, and open http://localhost:8080.
    ```
 
+   Then click **Save**.
+
    ![Customizations listing run-the-store under Workspace](../screenshots/02-tooling/skill.png)
+
+Then restart IntelliJ, so that the **Agent** selector lists **bug-hunter**.
 
 ## 3. Find the bug
 
-Start a new session. If the row under the chat box still says **Worktree** from lesson 1, click it and choose **Workspace**. Then, in the chat box, pick **bug-hunter** in the **Agent** selector. If it isn't there, restart IntelliJ, then pick it, and send:
+Start a new session. If the row under the chat box still says **Worktree** from lesson 1, click it and choose **Workspace**. Then, in the chat box, pick **bug-hunter** in the **Agent** selector, and send:
 
 > In 02-tooling, jackets should be 20% off, but the store sells them for $0. SaleTests fails. Find out why and fix it.
 
@@ -79,6 +85,8 @@ The fix multiplies first, then divides:
 int salePrice = product.price() * (100 - JACKET_SALE_PERCENT) / 100;
 ```
 
+In a **Workspace** session, Copilot writes the fix straight into `Catalog.java`. Above the chat box, click **Keep All** to keep it.
+
 ## 4. Rename with IntelliJ
 
 Send:
@@ -88,6 +96,8 @@ Send:
 IntelliJ renames the method and every call to it. If you rename it yourself with **Shift+F6**, untick **Search in comments and strings** and **Search for text occurrences**, or the rename also changes text in other lessons.
 
 ![Copilot's chat, showing a Rename refactoring call to intellij-idea-2026.3](../screenshots/02-tooling/rename.png)
+
+The rename should change only `Catalog.java` and `StoreController.java`. But IntelliJ can also rename `all()` in the Java code of another lesson's `SOLUTION.md`, even with those options off. Open the **Commit** tool window: if a `SOLUTION.md` is listed, right-click it, choose **Rollback**, and confirm.
 
 ## 5. Check the page in a browser (optional)
 
@@ -123,4 +133,4 @@ The whole fix is one line in `Catalog.java`:
 +        int salePrice = product.price() * (100 - JACKET_SALE_PERCENT) / 100;
 ```
 
-The rename changes `all()` to `products()` in `Catalog.java` and `StoreController.java`. No other files change.
+The rename changes `all()` to `products()` in `Catalog.java` and `StoreController.java`. If it changed a `SOLUTION.md` too, roll that back, as in [step 4](#4-rename-with-intellij).

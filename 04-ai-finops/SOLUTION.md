@@ -6,7 +6,9 @@ To see traces of both runs, do the optional [step 6](#6-see-the-traces-optional)
 
 ## 1. Run 1: Standard effort
 
-Each run starts in a new worktree, from your last commit, so both start from the same code. If Copilot asks about uncommitted changes, choose **Skip Changes**.
+Each run starts in a new worktree, from your last commit, so both start from the same code. If an **Uncommitted Changes** card appears when you send the prompt, click the arrow next to **Copy Changes**, and choose **Skip Changes**.
+
+If you turned on the sandbox in lesson 3, turn it off first: in Settings → GitHub Copilot → Sandbox, untick **Enable Sandbox by default for new Copilot sessions**. In the sandbox, Copilot can't run Maven, so it can't run the tests.
 
 1. At the top of Chat, click **+** to start a new session. In the row under the chat box, click **Workspace** and choose **Worktree**.
 
@@ -40,17 +42,15 @@ Don't click **Apply** yet.
 
 ## 3. Run 2: Max effort
 
-Start another new session in **Worktree** mode. If you used Fusion for run 1, choose Fusion **Max**. If you used a single model, keep that model and choose **Max**, or pick a second model. Send the same prompt, and record its numbers.
+Start another new session in **Worktree** mode. If you used Fusion for run 1, choose Fusion **Max**. If you used a single model, keep that model and choose **Max**, or pick a second model. Send the same prompt, and record its numbers. If the **Agent Debug Logs** tab still shows run 1, click **Agent Debug Logs** at the top of the tab to go back to the list of sessions, and pick the newest.
 
 ## 4. Keep the higher-effort run
 
-Open the Max session (or your higher-effort session). Above the chat box, it lists every file it changed, such as a new controller and `Catalog.java`. Click **Apply** to copy them all into your project. Don't apply the first run.
+Open the Max session (or your higher-effort session). Above the chat box, it lists every file it changed, such as a new controller and `Catalog.java`. Click **Apply** to copy them all into your project. There's no confirmation: the list just closes. Don't apply the first run.
 
 ![A Fusion Max run that changed two files, Catalog.java and ProductApiController.java, with Undo All and Apply](../screenshots/04-ai-finops/apply.png)
 
 *Copilot's changes vary from run to run, so your file names might differ.*
-
-If an **Uncommitted Changes** card appears, for example because of your numbers in `cost-report.md`, it offers **Copy**, **Move**, **Skip** and **Cancel**. Choose **Skip**.
 
 Then run `./mvnw -B -ntp verify` again, or click the green run icon next to `ApiTests`. The tests pass.
 

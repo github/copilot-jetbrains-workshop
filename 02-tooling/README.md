@@ -23,7 +23,7 @@ Also set up Copilot for this workspace, and rename one method:
 **Customizations**, at the top of Chat, is where you shape what Copilot knows and can do:
 
 - A **plugin** is a ready-made bundle, such as prompts, instructions and agents, from a marketplace.
-- A **custom agent** is Copilot with your own instructions for one kind of job. You pick it in the **Agent** selector in the chat box. If it isn't listed, restart IntelliJ.
+- A **custom agent** is Copilot with your own instructions for one kind of job. You pick it in the **Agent** selector in the chat box, after you restart IntelliJ.
 - A **skill** teaches Copilot one task, such as how to run the store. Copilot reads it when the task comes up.
 
 The agents and skills you create for the workspace are files in `.github/`, so everyone who clones the repo gets them.
@@ -61,20 +61,22 @@ On Windows, use `.\mvnw.cmd -B -ntp verify`. `SaleTests` fails: the jackets shou
 2. **Fill the Customization panel.** In **Customizations**:
 
    - Under **Plugins**, click **Browse Marketplace**, search for `java-development`, and click **Install**.
-   - Click **Agent**, click the arrow next to **Generate Agent**, and choose **New Agent (Workspace)**. Enter `bug-hunter`, and click **Create**.
-   - Click **Skills**, click the arrow next to **Generate Skill**, and choose **New Skill (Workspace)**. Enter `run-the-store`, and click **Create**.
+   - Click **Agent**, click the arrow next to **Generate Agent**, and choose **New Agent (Workspace)**. Enter `bug-hunter`, and click **Create**. The new file opens in an editor: replace all its text with the agent in **Hints**, and click **Save**, at the top right of the editor.
+   - Click **Skills**, click the arrow next to **Generate Skill**, and choose **New Skill (Workspace)**. Enter `run-the-store`, and click **Create**. Replace all its text with the skill in **Hints**, and click **Save**.
 
-   Replace all the text in each new file with the text in **Hints**.
+   Then restart IntelliJ, so that the **Agent** selector lists **bug-hunter**.
 
-3. **Find the bug.** Start a new session. If the row under the chat box says **Worktree**, change it to **Workspace**. Pick **bug-hunter** in the **Agent** selector: if it isn't there, restart IntelliJ. Then send:
+3. **Find the bug.** Start a new session. If the row under the chat box says **Worktree**, change it to **Workspace**. Pick **bug-hunter** in the **Agent** selector, and send:
 
    > In 02-tooling, jackets should be 20% off, but the store sells them for $0. SaleTests fails. Find out why and fix it.
 
-   Copilot runs `SaleTests`, debugs it in IntelliJ's debugger, and reads the values at a breakpoint. Check each command it asks to run, and confirm it.
+   Copilot runs `SaleTests`, debugs it in IntelliJ's debugger, and reads the values at a breakpoint. Check each command it asks to run, and confirm it. When it's done, click **Keep All**, above the chat box, to keep the fix.
 
 4. **Rename with IntelliJ.** Send:
 
    > In 02-tooling, rename the all() method in Catalog.java to products(), with IntelliJ's rename refactoring. Rename code only, without searching comments and text. Change only files in 02-tooling.
+
+   The rename should change only `Catalog.java` and `StoreController.java`, but IntelliJ can also change the Java code in another lesson's `SOLUTION.md`. Open the **Commit** tool window: if a `SOLUTION.md` is listed, right-click it, choose **Rollback**, and confirm.
 
 5. **Check the page (optional).** In `02-tooling`, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`), and open <http://localhost:8080>. The jackets cost $79, $111 and $119. Stop the store with **Ctrl+C**.
 
@@ -118,7 +120,7 @@ If Copilot doesn't debug, set a breakpoint yourself: click in the gutter next to
 
 - [ ] All the tests pass.
 - [ ] Copilot found the bug in IntelliJ's debugger.
-- [ ] `all()` in `Catalog.java` is renamed to `products()`, by IntelliJ's rename refactoring.
+- [ ] `all()` in `Catalog.java` is renamed to `products()`, by IntelliJ's rename refactoring, and no `SOLUTION.md` changed.
 - [ ] Customizations lists your plugin, agent and skill.
 - [ ] IntelliJ's MCP server is off.
 
