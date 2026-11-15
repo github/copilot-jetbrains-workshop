@@ -60,7 +60,7 @@ On Windows, use `.\mvnw.cmd -B -ntp verify`. `SaleTests` fails: the jackets shou
 
 2. **Fill the Customization panel.** In **Customizations**:
 
-   - Under **Plugins**, click **Browse Marketplace**, search for `java-development`, and click **Install**.
+   - Under **Plugins**, click **Browse Marketplace**, search for `java-development`, and click **Install**. If the search fails, wait a moment and try again.
    - Click **Agent**, click the arrow next to **Generate Agent**, and choose **New Agent (Workspace)**. Enter `bug-hunter`, and click **Create**. The new file opens in an editor: replace all its text with the agent in **Hints**, and click **Save**, at the top right of the editor.
    - Click **Skills**, click the arrow next to **Generate Skill**, and choose **New Skill (Workspace)**. Enter `run-the-store`, and click **Create**. Replace all its text with the skill in **Hints**, and click **Save**.
 
@@ -75,6 +75,8 @@ On Windows, use `.\mvnw.cmd -B -ntp verify`. `SaleTests` fails: the jackets shou
 4. **Rename with IntelliJ.** Send:
 
    > In 02-tooling, rename the all() method in Catalog.java to products(), with IntelliJ's rename refactoring. Rename code only, without searching comments and text. Change only files in 02-tooling.
+
+   If Copilot stops because some references are outside `02-tooling`, do the rename yourself: in `Catalog.java`, click `all`, press **Shift+F6**, type `products`, untick **Search in comments and strings** and **Search for text occurrences**, and press **Enter**.
 
    The rename should change only `Catalog.java` and `StoreController.java`, but IntelliJ can also change the Java code in another lesson's `SOLUTION.md`. Open the **Commit** tool window: if a `SOLUTION.md` is listed, right-click it, choose **Rollback**, and confirm.
 

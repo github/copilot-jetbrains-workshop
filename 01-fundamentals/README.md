@@ -63,7 +63,7 @@ On Windows, use `.\mvnw.cmd -B -ntp verify`. `SearchTests`, `LowStockTests` and 
    - In `Catalog.java`, type the first product's category, `"Jackets",`, after its name. Copilot suggests the other five categories: press **Tab** to accept them.
    - In `index.html`, click at the end of the `<h2>` line, and press **Enter**. Copilot suggests the category line: press **Tab** to accept it.
 
-   If no suggestion appears, type the change yourself.
+   If no suggestion appears, or Copilot fills in only some of the categories, type the rest yourself.
 
 5. **Check.** Run the tests again: they all pass. To see the page, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`), and open <http://localhost:8080/?q=boots>.
 

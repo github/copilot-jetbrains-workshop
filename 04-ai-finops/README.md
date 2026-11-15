@@ -46,7 +46,7 @@ On Windows, use `.\mvnw.cmd -B -ntp verify`. Two tests in `ApiTests` fail: the l
 
 ## Try it
 
-1. **Run 1.** At the top of Chat, click **+**. In the row under the chat box, click **Workspace**, and choose **Worktree**. In the model picker, turn on **Fusion**, and choose **Standard**. Without Fusion, pick a model, and choose **Medium**. Then send:
+1. **Run 1.** At the top of Chat, click **+**. In the row under the chat box, click **Workspace**, and choose **Worktree**. In the model picker, turn on **Fusion**, if it isn't on already, and choose **Standard**. Without Fusion, pick a model, and choose **Medium**. Then send:
 
    > In 04-ai-finops, add GET /api/products and GET /api/products/{sku}, which returns 404 for an unknown SKU. Make ApiTests pass. Don't change the tests.
 
@@ -54,7 +54,7 @@ On Windows, use `.\mvnw.cmd -B -ntp verify`. Two tests in `ApiTests` fail: the l
 
 2. **Read its cost.** When Copilot is done, open **Agent Debug Logs** from the Options menu at the top of Chat, and pick the newest session. Copy the four **Summary** fields into [cost-report.md](cost-report.md). Don't click **Apply** yet.
 
-3. **Run 2.** Start another new session in **Worktree** mode. Choose Fusion **Max**, or the same model at **Max**. Send the same prompt, and if the **Uncommitted Changes** card appears, skip the changes again. When Copilot is done, copy its numbers too: in the **Agent Debug Logs** tab, click **Agent Debug Logs** at the top to go back to the list of sessions, and pick the newest.
+3. **Run 2.** Start another new session, and check that it's in **Worktree** mode: it usually keeps the last session's choice. Choose Fusion **Max**, or the same model at **Max**. Send the same prompt, and if the **Uncommitted Changes** card appears, skip the changes again. When Copilot is done, copy its numbers too: in the **Agent Debug Logs** tab, go back to the list of sessions, and pick the newest. The **Summary** doesn't name the model: for the **Model** column, write the setting you chose, such as Fusion Max.
 
 4. **Apply run 2.** In the Max session, click **Apply**, above the chat box. There's no confirmation: the list of changed files just closes. Then run the tests again: they all pass.
 

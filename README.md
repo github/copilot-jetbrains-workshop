@@ -43,6 +43,10 @@ Run each lesson's commands from its own folder. Every store uses port 8080, so s
 
 If you don't see **+**, **Customizations** or the Options menu at the top of Chat, hover over the top of Chat.
 
+If you click **+** and Chat still shows the list of sessions, the new session may have opened as a **Copilot Chat** tab in the editor area: hide the Chat tool window, by clicking its icon in the sidebar, to see it.
+
+Copilot asks before it runs a command, such as `git status` or `./mvnw`, or reads a file it treats as sensitive. Check what it wants to do, and click **Allow Once**. To stop it asking again in that session, choose **Allow all commands in this Session** from the arrow next to **Allow Once**.
+
 In lesson 3, you turn on the sandbox for new sessions. Turn it off again when you finish that lesson: in the sandbox, Copilot can't run the other lessons' Maven builds.
 
 ## Contributing
