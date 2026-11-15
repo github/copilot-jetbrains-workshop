@@ -10,8 +10,10 @@ Your manager asks what a Copilot task costs. Find out: give Copilot the same sma
 
 The task is a JSON API for the store:
 
-- `GET /api/products` returns all six products.
+- `GET /api/products` returns all six products, as a JSON array.
 - `GET /api/products/{sku}` returns one product, or 404 when there's no such product.
+
+Each product has a `sku`, `name`, `price` and `stock`. For example, `/api/products/BOT-001` returns `{"sku":"BOT-001","name":"Ridge Hiking Boots","price":129,"stock":8}`.
 
 ## Use
 
@@ -40,7 +42,34 @@ cd 04-ai-finops
 ./mvnw -B -ntp verify
 ```
 
-On Windows, use `.\mvnw.cmd -B -ntp verify`. `ApiTests` fails.
+On Windows, use `.\mvnw.cmd -B -ntp verify`. Two tests in `ApiTests` fail: the list, and finding one product. The 404 test already passes, because there's no API yet.
+
+## Try it
+
+1. **Run 1.** At the top of Chat, click **+**. In the row under the chat box, click **Workspace**, and choose **Worktree**. In the model picker, turn on **Fusion**, and choose **Standard**. Without Fusion, pick a model, and choose **Medium**. Then send:
+
+   > In 04-ai-finops, add GET /api/products and GET /api/products/{sku}, which returns 404 for an unknown SKU. Make ApiTests pass. Don't change the tests.
+
+2. **Read its cost.** When Copilot is done, open **Agent Debug Logs** from the Options menu at the top of Chat, and pick the newest session. Copy the four **Summary** fields into [cost-report.md](cost-report.md). Don't click **Apply** yet.
+
+3. **Run 2.** Start another new session in **Worktree** mode. Choose Fusion **Max**, or the same model at **Max**. Send the same prompt, and copy its numbers too. If Copilot asks about uncommitted changes, choose **Skip Changes**.
+
+4. **Apply run 2.** In the Max session, click **Apply**. If an **Uncommitted Changes** card appears, choose **Skip**. Then run the tests again: they all pass.
+
+5. **Compare.** Which run used more **Copilot Usage (AIC)**, and why? Look at the model turns, tool calls and tokens. Max usually costs more, but not always.
+
+<details>
+<summary>Hints</summary>
+
+The Java files are in `src/main/java/com/contoso/store`. `Catalog.all()` already returns the products, and `Product` already has the four fields.
+
+A new `@RestController` for `/api/products` keeps the store's page as it is. Read the SKU with `@PathVariable`. `ResponseEntity.of(...)` returns 404 for an empty `Optional`. `ApiTests.java` shows the values the tests expect.
+
+The **Credits** below Copilot's answer are the same unit as **Copilot Usage (AIC)**.
+
+For traces of both runs, set up OpenTelemetry (optional) before run 1: turning on the export needs an IntelliJ restart.
+
+</details>
 
 ## Done when
 

@@ -2,6 +2,8 @@
 
 How to solve [the challenge](README.md) with GitHub Copilot in IntelliJ IDEA.
 
+First, make the pretend secret, as in the README's [Get started](README.md#get-started).
+
 ## 1. Run the tool without the sandbox
 
 At the top of Chat, click **+** to start a new session. The sandbox is off, unless you turned it on in Settings. Send:
@@ -69,7 +71,7 @@ To see what your organization manages, open **Policy Diagnostics** from the Opti
 
 *The report opens in an editor tab. Managed settings with no value show `null`.*
 
-To demo it, on a computer where you're an admin, copy the file into one of these folders and restart IntelliJ:
+To demo it, on a computer where you're an admin, copy the file into one of these folders, unless a `managed-settings.json` is already there, and restart IntelliJ:
 
 - Windows: `C:\Program Files\GitHubCopilot\`
 - macOS: `/Library/Application Support/GitHubCopilot/`

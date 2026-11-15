@@ -24,6 +24,7 @@ Open **Customizations** at the top of Chat.
    ---
    description: Fixes bugs with IntelliJ's test runner and debugger.
    ---
+   Work only in 02-tooling, and keep the tests unchanged.
    Fix bugs with evidence:
    1. Run the failing test with IntelliJ's test runner.
    2. Debug the test in IntelliJ, and read the variables at a breakpoint.
@@ -70,6 +71,8 @@ Copilot runs `SaleTests`, sets a breakpoint in `Catalog.withSalePrice()` and deb
 
 *IntelliJ's debugger, paused in `withSalePrice()` for the Trail Rain Jacket.*
 
+If Copilot doesn't debug, set a breakpoint yourself: click in the gutter next to the `salePrice` line. Then, in `SaleTests.java`, click the green run icon next to the class, and choose **Debug**.
+
 The fix multiplies first, then divides:
 
 ```java
@@ -99,6 +102,12 @@ Browser use is a preview in version 1.21.1. It needs Node.js 22 or later, and Ch
    A permission prompt appears for each site Copilot opens: allow it. The browser also shows a banner that it's being debugged. That's expected.
 
 Copilot doesn't fall back to another way to open the page. If you don't have browser use, or no browser is connected, open <http://localhost:8080> yourself.
+
+Stop the store with **Ctrl+C** when you're done.
+
+## 6. Turn off IntelliJ's MCP server
+
+In Settings → MCP Server (in some versions, under AI), untick **Enable MCP Server**. Its tools run outside the sandbox you'll meet in lesson 3.
 
 ## What you used
 

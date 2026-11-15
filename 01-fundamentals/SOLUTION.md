@@ -36,6 +36,8 @@ When a session finishes, the files it changed are listed above the chat box. The
 
 *Clicking a file opens it in IntelliJ's diff viewer.*
 
+Now only `CategoryTests` fails.
+
 ## 3. Add categories with next edit suggestions
 
 Do this after you apply both sessions. In Settings → GitHub Copilot → Completions, check that **Enable Next Edit Suggestions(NES)** is selected.
@@ -64,11 +66,15 @@ Do this after you apply both sessions. In Settings → GitHub Copilot → Comple
 
    *Copilot can suggest this line too. Press Tab to accept it.*
 
+If Copilot doesn't suggest the changes, type them yourself: see [The code](#the-code).
+
 ## 4. Run the tests
 
 Run `./mvnw -B -ntp verify` again, or click the green run icon next to a test class. All the tests pass.
 
 ![CategoryTests passing in IntelliJ's test runner](../screenshots/01-fundamentals/tests-passed.png)
+
+To see the page, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`), and open <http://localhost:8080/?q=boots>.
 
 ## What you used
 

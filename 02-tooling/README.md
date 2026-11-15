@@ -8,7 +8,7 @@ Copilot works better when it knows your project and can use your tools. In this 
 
 It's sale week: every jacket is 20% off. But the store sells the jackets for $0.
 
-Find the bug and fix it. Copilot does the work with IntelliJ's own test runner, debugger and refactorings.
+Find the bug and fix it. Copilot does the work with IntelliJ's own test runner, debugger and refactorings. The jackets should cost $79, $111 and $119: 20% off $99, $139 and $149, rounded down to whole dollars. Don't change the tests.
 
 Also set up Copilot for this workspace, and rename one method:
 
@@ -54,11 +54,72 @@ cd 02-tooling
 
 On Windows, use `.\mvnw.cmd -B -ntp verify`. `SaleTests` fails: the jackets should cost $79, $111 and $119.
 
+## Try it
+
+1. **Turn on IntelliJ's MCP server.** In Settings → MCP Server (in some versions, under AI), select **Enable MCP Server**, and click **OK**. In **Customizations**, at the top of Chat, **MCP Servers** lists **IntelliJ IDEA MCP Server** as **Running**.
+
+2. **Fill the Customization panel.** In **Customizations**:
+
+   - Under **Plugins**, click **Browse Marketplace**, search for `java-development`, and click **Install**.
+   - Click **Agent**, click the arrow next to **Generate Agent**, and choose **New Agent (Workspace)**. Enter `bug-hunter`, and click **Create**.
+   - Click **Skills**, click the arrow next to **Generate Skill**, and choose **New Skill (Workspace)**. Enter `run-the-store`, and click **Create**.
+
+   Replace all the text in each new file with the text in **Hints**.
+
+3. **Find the bug.** Start a new session. If the row under the chat box says **Worktree**, change it to **Workspace**. Pick **bug-hunter** in the **Agent** selector: if it isn't there, restart IntelliJ. Then send:
+
+   > In 02-tooling, jackets should be 20% off, but the store sells them for $0. SaleTests fails. Find out why and fix it.
+
+   Copilot runs `SaleTests`, debugs it in IntelliJ's debugger, and reads the values at a breakpoint. Check each command it asks to run, and confirm it.
+
+4. **Rename with IntelliJ.** Send:
+
+   > In 02-tooling, rename the all() method in Catalog.java to products(), with IntelliJ's rename refactoring. Rename code only, without searching comments and text. Change only files in 02-tooling.
+
+5. **Check the page (optional).** In `02-tooling`, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`), and open <http://localhost:8080>. The jackets cost $79, $111 and $119. Stop the store with **Ctrl+C**.
+
+6. **Turn off IntelliJ's MCP server.** In Settings → MCP Server, untick **Enable MCP Server**. Its tools run outside the sandbox in lesson 3.
+
+<details>
+<summary>Hints</summary>
+
+The agent, `.github/agents/bug-hunter.agent.md`:
+
+```markdown
+---
+description: Fixes bugs with IntelliJ's test runner and debugger.
+---
+Work only in 02-tooling, and keep the tests unchanged.
+Fix bugs with evidence:
+1. Run the failing test with IntelliJ's test runner.
+2. Debug the test in IntelliJ, and read the variables at a breakpoint.
+3. Explain the cause in one sentence, make the smallest fix, and run the test again.
+```
+
+The skill, `.github/skills/run-the-store/SKILL.md`:
+
+```markdown
+---
+name: run-the-store
+description: Runs the tests and starts the store for one lesson of this workshop.
+---
+Each lesson is its own app, in its own folder, like 02-tooling.
+Run the tests with ./mvnw -B -ntp verify (on Windows, .\mvnw.cmd -B -ntp verify).
+Start the store with ./mvnw spring-boot:run, and open http://localhost:8080.
+```
+
+The bug is in `withSalePrice()`, in `Catalog.java`. What is `(100 - JACKET_SALE_PERCENT) / 100`, when Java divides two whole numbers?
+
+If Copilot doesn't debug, set a breakpoint yourself: click in the gutter next to the `salePrice` line. Then, in `SaleTests.java`, click the green run icon next to the class, and choose **Debug**.
+
+</details>
+
 ## Done when
 
 - [ ] All the tests pass.
 - [ ] Copilot found the bug in IntelliJ's debugger.
 - [ ] `all()` in `Catalog.java` is renamed to `products()`, by IntelliJ's rename refactoring.
 - [ ] Customizations lists your plugin, agent and skill.
+- [ ] IntelliJ's MCP server is off.
 
 Stuck? Read the [solution](SOLUTION.md).

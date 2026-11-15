@@ -35,6 +35,12 @@ Each lesson's folder has the challenge in `README.md` and the solution in `SOLUT
 
 Browser use, the cloud sandbox and Copilot Fusion are still rolling out, so you might not have them yet. You can still finish every lesson without them.
 
+### How to work through a lesson
+
+Read **The problem**, and run the tests in **Get started**. Then follow **Try it**: its prompts are ready to copy into Chat. If you get stuck, open **Hints**, and then the solution.
+
+Run each lesson's commands from its own folder. Every store uses port 8080, so stop one store before you start another.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

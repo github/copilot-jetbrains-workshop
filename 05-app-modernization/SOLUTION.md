@@ -6,7 +6,7 @@ How to solve [the challenge](README.md) with GitHub Copilot in IntelliJ IDEA.
 
 Open `05-app-modernization` in its own window, and install the **GitHub Copilot modernization** plugin, as in the README.
 
-1. **See what's vulnerable.** Choose Code → Analyze Code → **Vulnerable Dependencies**. The Problems tool window opens on its **Security** tab: the old app has 25 issues. Click a library to see its CVEs.
+1. **See what's vulnerable.** Choose Code → Analyze Code → **Vulnerable Dependencies**. The Problems tool window opens on its **Security** tab: in this run, the old app had 25 issues. Click a library to see its CVEs.
 
    ![Vulnerable Dependencies finds 25 issues, and shows the CVEs of Guava 28.1-jre](../screenshots/05-app-modernization/vulnerable-before.png)
 
@@ -46,7 +46,7 @@ Open `05-app-modernization` in its own window, and install the **GitHub Copilot 
 
    ![Vulnerable Dependencies: no issues found](../screenshots/05-app-modernization/vulnerable-fixed.png)
 
-7. **Run the store.** Open `src/main/java/com/contoso/store/StoreApplication.java`, and click the green **Run** arrow next to `main`. http://localhost:8080 shows the six products, and Spring Boot 4.
+7. **Run the tests and the store.** Run `.\mvnw.cmd verify` (on macOS and Linux, `./mvnw verify`): both tests run and pass. Then open `src/main/java/com/contoso/store/StoreApplication.java`, and click the green **Run** arrow next to `main`. http://localhost:8080 shows the six products, and Spring Boot 4.
 
    ![Trail Store on Spring Boot 4.1.2, with the six products](../screenshots/05-app-modernization/store.png)
 

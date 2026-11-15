@@ -2,6 +2,8 @@
 
 How to solve [the challenge](README.md) with GitHub Copilot in IntelliJ IDEA.
 
+To see traces of both runs, do the optional [step 6](#6-see-the-traces-optional) first: turning on the export needs an IntelliJ restart.
+
 ## 1. Run 1: Standard effort
 
 Each run starts in a new worktree, from your last commit, so both start from the same code. If Copilot asks about uncommitted changes, choose **Skip Changes**.
@@ -56,7 +58,7 @@ Then run `./mvnw -B -ntp verify` again, or click the green run icon next to `Api
 
 ## 5. Compare
 
-With Fusion, Max can use stronger models, and more than one model for a task, such as one that writes the code and others that check it. So it usually costs more. A higher effort level on one model usually costs more too. Each turn sends the whole conversation to the model again, so the token count grows quickly. If you used Fusion, hover over the effort level below Copilot's answer to see which models it used.
+With Fusion, Max can use stronger models, and more than one model for a task, such as one that writes the code and others that check it. So it usually costs more, but not always. A higher effort level on one model usually costs more too. Each turn sends the whole conversation to the model again, so the token count grows quickly. If you used Fusion, hover over the effort level below Copilot's answer to see which models it used.
 
 ## 6. See the traces (optional)
 
