@@ -10,11 +10,11 @@ Open `05-app-modernization` in its own window, and install the **GitHub Copilot 
 
    ![Vulnerable Dependencies finds 25 issues, and shows the CVEs of Guava 28.1-jre](../screenshots/05-app-modernization/vulnerable-before.png)
 
-2. **Turn on the plugin's tools.** In the chat box, click **Configure tools** (the sliders icon). Search for `appmod`, and make sure **appmod-mcp-server** is ticked. If it says **Stopped**, click **Start**. Then click **Apply**. With these tools, Copilot plans the upgrade, builds the app, runs the tests and checks for CVEs.
+2. **Turn on the plugin's tools.** In the chat box, click **Configure tools** (the sliders icon), and search for `appmod`. If **appmod-mcp-server** says **Stopped**, click **Start**: you can't tick it while it's stopped. Make sure it's ticked, then click **Apply**. With these tools, Copilot plans the upgrade, builds the app, runs the tests and checks for CVEs.
 
    ![Configure Tools, with appmod-mcp-server ticked and running, and its upgrade plan, build, CVE and test tools](../screenshots/05-app-modernization/tools.png)
 
-3. **Ask the upgrade agent.** Start a new chat, and choose the **modernize-java-upgrade** agent. Under the chat box, make sure it says **Copilot**, not **Local**. Then send:
+3. **Ask the upgrade agent.** Start a new chat, and choose the **modernize-java-upgrade** agent. If it isn't in the list, check in Settings → Plugins that **GitHub Copilot modernization** is turned on, and restart IntelliJ. Under the chat box, make sure it says **Copilot**, not **Local**. Then send:
 
    > Upgrade this app to Java 25 and the latest Spring Boot 4. Use the JDK 25 that's installed, move the tests to JUnit Jupiter without changing what they check, and upgrade any library with known CVEs.
 
@@ -22,7 +22,7 @@ Open `05-app-modernization` in its own window, and install the **GitHub Copilot 
 
    The **Upgrade Runtime & Frameworks** button in the tool window starts an upgrade too, but in a **Local** chat. With version 1.14.0 of the plugin, that chat stops at its first command, because the plugin stops IntelliJ's terminal from starting ([known issue](https://github.com/microsoft/github-copilot-appmod/issues/213)). The **Copilot** chat runs commands without IntelliJ's terminal.
 
-4. **Check the plan.** Copilot writes an upgrade plan, `plan.md`, in `.github/modernize/java-upgrade/`: your guidelines, the goals, and each library's current and new version. Then it makes a branch, `appmod/java-upgrade-<id>`, and upgrades in steps, sometimes through Spring Boot 3.5 on the way. It builds the app after each step, and commits it.
+4. **Check the plan.** Copilot writes an upgrade plan, `plan.md`, in a new folder under `.github/modernize/java-upgrade/`: your guidelines, the goals, and each library's current and new version. Then it makes a branch, `appmod/java-upgrade-<id>`, and upgrades in steps, sometimes through Spring Boot 3.5 on the way. It builds the app after each step, and commits it.
 
    ![plan.md: the guidelines from the prompt, and the goals: Java 25, Spring Boot 4.1.2, JUnit Jupiter, and no libraries with known CVEs](../screenshots/05-app-modernization/plan.png)
 
@@ -32,11 +32,11 @@ Open `05-app-modernization` in its own window, and install the **GitHub Copilot 
 
    ![summary.md: Java 8 to 25, Spring Boot 2.7.18 to 4.1.2, javax to jakarta, JUnit 4 to JUnit Jupiter, and Guava 28.1 to 33.8.0](../screenshots/05-app-modernization/summary.png)
 
-6. **Check the libraries yourself.** Click **Keep All**, press Ctrl+Shift+O to load the Maven changes, and run Vulnerable Dependencies again. Copilot's CVE check only looks at the libraries in `pom.xml`, so it misses the ones that Spring Boot brings in. In this run, 5 were left:
+6. **Check the libraries yourself.** Click **Keep All**, press Ctrl+Shift+O to load the Maven changes, and run Vulnerable Dependencies again. Copilot's CVE check only looks at the libraries in `pom.xml`, so it misses the ones that Spring Boot brings in, and its data can differ from IntelliJ's. In this run, 5 were left:
 
    ![Vulnerable Dependencies finds 5 issues: logback-classic, android-json, jackson-databind, json-smart and asm](../screenshots/05-app-modernization/vulnerable-after.png)
 
-   Send, with the libraries that your check finds:
+   Send this prompt, but change the number and the names to the libraries that your check finds:
 
    > IntelliJ's Vulnerable Dependencies check still finds 5 vulnerable libraries that Spring Boot brings in: logback-classic, jackson-databind, json-smart, asm and android-json. Override each one with a version that fixes its CVEs, or exclude it if there's no fix, and keep the tests passing.
 
@@ -46,7 +46,7 @@ Open `05-app-modernization` in its own window, and install the **GitHub Copilot 
 
    ![Vulnerable Dependencies: no issues found](../screenshots/05-app-modernization/vulnerable-fixed.png)
 
-7. **Run the tests and the store.** Run `.\mvnw.cmd verify` (on macOS and Linux, `./mvnw verify`): both tests run and pass. Then open `src/main/java/com/contoso/store/StoreApplication.java`, and click the green **Run** arrow next to `main`. http://localhost:8080 shows the six products, and Spring Boot 4.
+7. **Run the tests and the store.** Run `.\mvnw.cmd verify` (on macOS and Linux, `./mvnw verify`): both tests run and pass. Then open `src/main/java/com/contoso/store/StoreApplication.java`, click the green **Run** arrow next to `main`, and choose **Run 'StoreApplication.main()'**. http://localhost:8080 shows the six products, and Spring Boot 4. Stop the store with the red **Stop** button in the **Run** tool window.
 
    ![Trail Store on Spring Boot 4.1.2, with the six products](../screenshots/05-app-modernization/store.png)
 
