@@ -26,7 +26,7 @@ An admin can set Copilot settings that users can't change: through device manage
 - macOS: `/Library/Application Support/GitHubCopilot/`
 - Linux: `/etc/github-copilot/`
 
-To see what's managed on your computer, open **Policy Diagnostics** from the Options menu at the top of Chat. It's only in a **This computer** session.
+To see what's managed on your computer, open **Policy Diagnostics** from the Options menu at the top of Chat: the small **⋮** button at the right end of the Chat tool window's title bar, the same menu as **View Mode** and **Resize**. It's only in a **This computer** session.
 
 ![The Options menu at the top of Chat, with Policy Diagnostics highlighted](../screenshots/03-secure-execution/options-menu.png)
 
@@ -73,7 +73,7 @@ The local sandbox runs on Windows 11 23H2 or later (25H2 works best), Apple Sili
 
    This shows that this command ran in the sandbox. It doesn't prove that every tool is contained: IntelliJ's MCP server, for one, runs its commands outside it.
 
-5. **Open Policy Diagnostics** from the Options menu at the top of Chat, in a **This computer** session. It shows what your organization manages. Settings with no managed value show `null`.
+5. **Open Policy Diagnostics** from the Options menu (the **⋮** button at the right end of the Chat tool window's title bar), in a **This computer** session. It shows what your organization manages. Settings with no managed value show `null`.
 
 6. **Clean up.** Delete the `.trail-store` folder: `rm -r ~/.trail-store` (in Windows PowerShell, `Remove-Item -Recurse "$HOME\.trail-store"`). Then, in Settings → GitHub Copilot → Sandbox, turn off **Enable Sandbox by default for new Copilot sessions**: in the sandbox, Copilot can't run the Maven builds of the other lessons.
 
