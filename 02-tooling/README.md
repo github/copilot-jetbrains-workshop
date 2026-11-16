@@ -72,6 +72,8 @@ On Windows, use `.\mvnw.cmd -B -ntp verify`. `SaleTests` fails: the jackets shou
 
    Copilot runs `SaleTests`, debugs it in IntelliJ's debugger, and reads the values at a breakpoint. Check each command it asks to run, and confirm it. When it's done, click **Keep All**, above the chat box, to keep the fix.
 
+   If Copilot explains the bug but doesn't change the code, send: `Fix it.`
+
 4. **Rename with IntelliJ.** Send:
 
    > In 02-tooling, rename the all() method in Catalog.java to products(), with IntelliJ's rename refactoring. Rename code only, without searching comments and text. Change only files in 02-tooling.
