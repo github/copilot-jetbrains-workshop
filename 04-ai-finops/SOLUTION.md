@@ -34,9 +34,9 @@ Below Copilot's answer, the chat footer shows **Credits**. That's the same unit 
 
 ![The Options menu at the top of Chat, with Agent Debug Logs highlighted](../screenshots/04-ai-finops/options-menu.png)
 
-![A session's Summary in Agent Debug Logs: 4 model turns, 7 tool calls, 137,576 total tokens and 0.64 AIC](../screenshots/04-ai-finops/debug-logs.png)
+![A session's Summary in Agent Debug Logs: 9 model turns, 14 tool calls, 381,667 total tokens and 0.91 AIC](../screenshots/04-ai-finops/debug-logs.png)
 
-*The Summary of one run. It used Claude Haiku 5.5, because Fusion hadn't reached this account yet.*
+*The Summary of one run, on Fusion Standard.*
 
 Don't click **Apply** yet.
 
@@ -48,9 +48,9 @@ Start another new session in **Worktree** mode. If you used Fusion for run 1, ch
 
 Open the Max session (or your higher-effort session). Above the chat box, it lists every file it changed, such as a new controller and `Catalog.java`. Click **Apply** to copy them all into your project. There's no confirmation: the list just closes. Don't apply the first run.
 
-![A Claude Opus 5.5 run that changed two files, Catalog.java and ProductApiController.java, with Undo All and Apply](../screenshots/04-ai-finops/apply.png)
+![A Fusion Max run that changed two files, Catalog.java and ProductController.java, with Undo All and Apply](../screenshots/04-ai-finops/apply.png)
 
-*It used Claude Opus 5.5 at Max, because Fusion hadn't reached this account yet. Copilot's changes vary from run to run, so your file names might differ.*
+*Copilot's changes vary from run to run, so your file names might differ.*
 
 Then run `./mvnw -B -ntp verify` again, or click the green run icon next to `ApiTests`. The tests pass.
 

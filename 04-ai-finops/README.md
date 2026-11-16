@@ -27,7 +27,7 @@ Fusion is still rolling out, and it isn't in every plan. If it isn't in yours, l
 
 Models read and write text in tokens, which are small pieces of words. The more tokens a task uses, the more it costs, and each turn sends the whole conversation to the model again. Agent debug logs show what each session used. Open them from the Options menu at the top of Chat, and copy these fields from the **Summary** into [cost-report.md](cost-report.md): **Model Turns**, **Tool Calls**, **Total Tokens** and **Copilot Usage (AIC)**.
 
-![A session's Summary in Agent Debug Logs: 4 model turns, 7 tool calls, 137,576 total tokens and 0.64 AIC](../screenshots/04-ai-finops/debug-logs.png)
+![A session's Summary in Agent Debug Logs: 9 model turns, 14 tool calls, 381,667 total tokens and 0.91 AIC](../screenshots/04-ai-finops/debug-logs.png)
 
 ### OpenTelemetry, optional
 
