@@ -48,9 +48,9 @@ Start another new session in **Worktree** mode. If you used Fusion for run 1, ch
 
 Open the Max session (or your higher-effort session). Above the chat box, it lists every file it changed, such as a new controller and `Catalog.java`. Click **Apply** to copy them all into your project. There's no confirmation: the list just closes. Don't apply the first run.
 
-![A Fusion Max run that changed two files, Catalog.java and ProductApiController.java, with Undo All and Apply](../screenshots/04-ai-finops/apply.png)
+![A Claude Opus 5.5 run that changed two files, Catalog.java and ProductApiController.java, with Undo All and Apply](../screenshots/04-ai-finops/apply.png)
 
-*Copilot's changes vary from run to run, so your file names might differ.*
+*It used Claude Opus 5.5 at Max, because Fusion hadn't reached this account yet. Copilot's changes vary from run to run, so your file names might differ.*
 
 Then run `./mvnw -B -ntp verify` again, or click the green run icon next to `ApiTests`. The tests pass.
 
