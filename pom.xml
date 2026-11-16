@@ -7,7 +7,7 @@
          Each lesson is a standalone app: build it from its own folder with its own Maven wrapper.
          Lesson 5 isn't listed: attendees open it as its own project, so its upgrade can't touch the other lessons. -->
     <groupId>com.contoso</groupId>
-    <artifactId>copilot-intellij-features</artifactId>
+    <artifactId>copilot-jetbrains-workshop</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>GitHub Copilot in IntelliJ IDEA workshop</name>
