@@ -18,9 +18,7 @@ If you turned on the sandbox in lesson 3, turn it off first: in Settings → Git
 
    If Fusion isn't there, pick a model, and choose **Medium**. The per-model effort picker offers **Low**, **Medium**, **High**, **Extra High** and **Max**.
 
-   <img src="https://github.com/user-attachments/assets/bff63cb7-0a3f-4f55-99ce-4c2761547c2e" alt="Copilot Fusion in the model picker" width="600">
-
-   *Copilot Fusion in the model picker, from the GitHub Changelog. Fusion hadn't reached this account yet.*
+   ![The model picker with Copilot Fusion turned on and Standard selected, and High and Max below it](../screenshots/04-ai-finops/fusion-picker.png)
 
 3. Send:
 
