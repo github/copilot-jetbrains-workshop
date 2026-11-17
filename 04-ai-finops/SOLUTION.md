@@ -70,7 +70,7 @@ This needs Docker, installed and running.
 
    ![Settings, GitHub Copilot, Chat, Open Telemetry, with export on and the endpoint set to http://localhost:4318](../screenshots/04-ai-finops/otel-setting.png)
 
-3. Run a session, then open the Aspire dashboard at <http://localhost:18888>, and choose **Traces**. In a trace, the `execute_tool` spans show hashed tool names, not readable ones.
+3. Run a session, then open the Aspire dashboard at <http://localhost:18888>, and choose **Traces**. In a trace, each `execute_tool` span is one tool call, such as `execute_tool grep`.
 
 When you're done, stop the dashboard with `docker compose down`, and turn off the export.
 

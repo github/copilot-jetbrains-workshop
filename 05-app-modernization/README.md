@@ -27,7 +27,7 @@ IntelliJ checks your libraries against known vulnerabilities, with data from Men
 - Check that it builds: in the terminal, run `.\mvnw.cmd verify` (on macOS and Linux, `./mvnw verify`). It passes on Java 25, but the code still targets Java 8.
 - Install the plugin: in Settings → Plugins, search for **GitHub Copilot modernization**, click **Install**, and restart IntelliJ, so that its agent appears in the chat.
 
-With IntelliJ 2026.3, version 1.14.0 of the plugin can stop IntelliJ's terminal from starting ([known issue](https://github.com/microsoft/github-copilot-appmod/issues/213)). Until it's fixed, run `mvnw` in your system's terminal, and under the chat box, choose **Copilot**, not **Local**: the **Local** agent needs IntelliJ's terminal.
+Use version 1.14.1 or later of the plugin. With IntelliJ 2026.3, version 1.14.0 stops IntelliJ's terminal from starting ([known issue](https://github.com/microsoft/github-copilot-appmod/issues/213)): if you have it, update it in Settings → Plugins, and restart IntelliJ.
 
 ## Try it
 

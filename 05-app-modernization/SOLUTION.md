@@ -20,9 +20,9 @@ Open `05-app-modernization` in its own window, and install the **GitHub Copilot 
 
    ![The modernize-java-upgrade agent with the prompt, running on this computer with Copilot](../screenshots/05-app-modernization/prompt.png)
 
-   The **Upgrade Runtime & Frameworks** button in the tool window starts an upgrade too, but in a **Local** chat. With version 1.14.0 of the plugin, that chat stops at its first command, because the plugin stops IntelliJ's terminal from starting ([known issue](https://github.com/microsoft/github-copilot-appmod/issues/213)). The **Copilot** chat runs commands without IntelliJ's terminal.
+   The **Upgrade Runtime & Frameworks** button in the tool window starts an upgrade too, but in a **Local** chat, which runs its commands in IntelliJ's terminal. Version 1.14.0 of the plugin stops that terminal from starting, so the chat stops at its first command ([known issue](https://github.com/microsoft/github-copilot-appmod/issues/213)). Version 1.14.1 fixes the terminal.
 
-4. **Check the plan.** Copilot writes an upgrade plan, `plan.md`, in a new folder under `.github/modernize/java-upgrade/`: your guidelines, the goals, and each library's current and new version. Then it makes a branch, `appmod/java-upgrade-<id>`, and upgrades in steps, sometimes through Spring Boot 3.5 on the way. It builds the app after each step, and commits it.
+4. **Check the plan.** Copilot writes an upgrade plan, `plan.md`, in a new folder under `.github/modernize/java-upgrade/`: your guidelines, the goals, and each library's current and new version. Then it upgrades in steps, sometimes through Spring Boot 3.5 on the way, and builds the app after each step. It may also make a branch, `appmod/java-upgrade-<id>`, and commit each step.
 
    ![plan.md: the guidelines from the prompt, and the goals: Java 25, Spring Boot 4.1.2, JUnit Jupiter, and no libraries with known CVEs](../screenshots/05-app-modernization/plan.png)
 

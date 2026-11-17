@@ -23,11 +23,7 @@ Each lesson has a simple challenge to solve in IntelliJ IDEA with GitHub Copilot
   git config --global user.email "you@example.com"
   ```
 
-JetBrains Marketplace still has GitHub Copilot 1.21.0. Until 1.21.1 ships, get a 1.21.1 release candidate from the nightly channel:
-
-1. In Settings → Plugins, click the gear icon, and choose **Manage Plugin Repositories**.
-2. Add `https://plugins.jetbrains.com/plugins/nightly/17718`, and click **OK**.
-3. Update GitHub Copilot, and restart IntelliJ.
+If your GitHub Copilot plugin is older, update it in Settings → Plugins, and restart IntelliJ.
 
 ## Get started
 
@@ -46,6 +42,8 @@ Run each lesson's commands from its own folder. Every store uses port 8080, so s
 If you don't see **+**, **Customizations** or the Options menu at the top of Chat, hover over the top of Chat.
 
 If you click **+** and Chat still shows the list of sessions, the new session may have opened as a **Copilot Chat** tab in the editor area: hide the Chat tool window, by clicking its icon in the sidebar, to see it.
+
+A new session keeps the agent you used last. Unless a lesson says otherwise, choose **Agent** in the **Agent** selector, in the chat box: lesson 2's **bug-hunter** works only in `02-tooling`.
 
 Copilot asks before it runs a command, such as `git status` or `./mvnw`, or reads a file it treats as sensitive. Check what it wants to do, and click **Allow Once**. To stop it asking again in that session, choose **Allow all commands in this Session** from the arrow next to **Allow Once**.
 

@@ -23,7 +23,7 @@ Also set up Copilot for this workspace, and rename one method:
 **Customizations**, at the top of Chat, is where you shape what Copilot knows and can do:
 
 - A **plugin** is a ready-made bundle, such as prompts, instructions and agents, from a marketplace.
-- A **custom agent** is Copilot with your own instructions for one kind of job. You pick it in the **Agent** selector in the chat box, after you restart IntelliJ.
+- A **custom agent** is Copilot with your own instructions for one kind of job. You pick it in the **Agent** selector in the chat box.
 - A **skill** teaches Copilot one task, such as how to run the store. Copilot reads it when the task comes up.
 
 The agents and skills you create for the workspace are files in `.github/`, so everyone who clones the repo gets them.
@@ -36,7 +36,7 @@ MCP, the Model Context Protocol, is an open standard that lets AI use tools from
 
 ### Browser use, optional
 
-Copilot opens pages in your own browser and reads them, so it can check a change in the running app. It's a preview. Turn it on in Settings → GitHub Copilot → Chat → Agent. It needs Node.js 22 or later, and Chrome or Edge with the GitHub Copilot browser extension.
+Copilot opens pages in your own browser and reads them, so it can check a change in the running app. It's a preview, and still rolling out. Turn it on in Settings → GitHub Copilot → Chat → Agent → **Enable Browser Use**: if that setting isn't there, you don't have browser use yet. It needs Node.js 22 or later, and Chrome or Edge with the GitHub Copilot browser extension.
 
 ## Get started
 
@@ -64,7 +64,7 @@ On Windows, use `.\mvnw.cmd -B -ntp verify`. `SaleTests` fails: the jackets shou
    - Click **Agent**, click the arrow next to **Generate Agent**, and choose **New Agent (Workspace)**. Enter `bug-hunter`, and click **Create**. The new file opens in an editor: replace all its text with the agent in **Hints**, and click **Save**, at the top right of the editor.
    - Click **Skills**, click the arrow next to **Generate Skill**, and choose **New Skill (Workspace)**. Enter `run-the-store`, and click **Create**. Replace all its text with the skill in **Hints**, and click **Save**.
 
-   Then restart IntelliJ, so that the **Agent** selector lists **bug-hunter**.
+   If the **Agent** selector, in the chat box, doesn't list **bug-hunter**, restart IntelliJ.
 
 3. **Find the bug.** Start a new session. If the row under the chat box says **Worktree**, change it to **Workspace**. Pick **bug-hunter** in the **Agent** selector, and send:
 

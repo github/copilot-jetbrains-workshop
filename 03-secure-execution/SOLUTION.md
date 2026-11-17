@@ -6,7 +6,7 @@ First, make the pretend secret, as in the README's [Get started](README.md#get-s
 
 ## 1. Run the tool without the sandbox
 
-At the top of Chat, click **+** to start a new session. The sandbox is off, unless you turned it on in Settings. Send:
+At the top of Chat, click **+** to start a new session. The sandbox is off, unless you turned it on in Settings. If the **Agent** selector, in the chat box, shows **bug-hunter** from lesson 2, choose **Agent**. Send:
 
 > In 03-secure-execution, run the supplier's price checker. Run it as is: don't change user.home, and don't use a temporary home folder.
 

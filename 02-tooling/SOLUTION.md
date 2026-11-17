@@ -55,7 +55,7 @@ Open **Customizations** at the top of Chat.
 
    ![Customizations listing run-the-store under Workspace](../screenshots/02-tooling/skill.png)
 
-Then restart IntelliJ, so that the **Agent** selector lists **bug-hunter**.
+If the **Agent** selector, in the chat box, doesn't list **bug-hunter**, restart IntelliJ.
 
 ## 3. Find the bug
 
@@ -103,7 +103,7 @@ The rename should change only `Catalog.java` and `StoreController.java`. But Int
 
 Browser use is a preview in version 1.21.1. It needs Node.js 22 or later, and Chrome or Edge with the **GitHub Copilot** browser extension. The extension's getting-started page covers only Copilot CLI. For IntelliJ, follow these steps:
 
-1. Turn on Settings → GitHub Copilot → Chat → Agent → **Enable Browser Use**, and click **OK**.
+1. Turn on Settings → GitHub Copilot → Chat → Agent → **Enable Browser Use**, and click **OK**. If that setting isn't there, you don't have browser use yet.
 2. In 02-tooling, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`).
 3. In a new session, send:
 
