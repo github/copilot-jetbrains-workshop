@@ -11,6 +11,8 @@ For help and questions about the workshop, file an issue in this repo. For probl
 - GitHub Copilot for JetBrains IDEs: [microsoft/copilot-intellij-feedback](https://github.com/microsoft/copilot-intellij-feedback)
 - GitHub Copilot modernization: [microsoft/github-copilot-appmod](https://github.com/microsoft/github-copilot-appmod)
 
-## Microsoft Support Policy
+The GitHub Copilot in IntelliJ IDEA workshop is under active development and maintained by GitHub staff and the community. We will do our best to respond to support, feature requests, and community questions in a timely manner.
+
+## GitHub Support Policy
 
 Support for this project is limited to the resources listed above.

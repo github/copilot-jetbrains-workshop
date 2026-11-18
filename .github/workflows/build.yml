@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build lessons
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+      # In lessons 1, 2 and 4, failing tests show attendees what to fix, so compile the tests but don't run them.
+      - name: Compile each lesson with its Maven wrapper
+        run: |
+          for lesson in 01-fundamentals 02-tooling 04-ai-finops 05-app-modernization; do
+            echo "::group::$lesson"
+            (cd "$lesson" && ./mvnw -B -ntp test-compile)
+            echo "::endgroup::"
+          done
