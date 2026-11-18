@@ -36,7 +36,7 @@ MCP, the Model Context Protocol, is an open standard that lets AI use tools from
 
 ### Browser use, optional
 
-Copilot opens pages in your own browser and reads them, so it can check a change in the running app. It's a preview, and still rolling out. Turn it on in Settings → GitHub Copilot → Chat → Agent → **Enable Browser Use**: if that setting isn't there, you don't have browser use yet. It needs Node.js 22 or later, and Chrome or Edge with the GitHub Copilot browser extension.
+Copilot opens pages in your own browser and reads them, so it can check a change in the running app. It's a preview, and still rolling out. Turn it on in Settings → GitHub Copilot → Chat → Customizations → Plugins → **Enable Browser Use** (in plugin 1.21.1, under Chat → Agent): if that setting isn't there, you don't have browser use yet. It needs Node.js 22 or later, and Chrome or Edge with the GitHub Copilot browser extension.
 
 ## Get started
 
