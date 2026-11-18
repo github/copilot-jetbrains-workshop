@@ -66,7 +66,7 @@ This needs Docker, installed and running.
 
    ![docker-compose.yml in the editor, with the run icon next to services:](../screenshots/04-ai-finops/compose.png)
 
-2. In Settings → GitHub Copilot → Chat, turn on **Enable Open Telemetry export**, set **OTLP endpoint** to `http://localhost:4318`, and restart IntelliJ.
+2. In Settings → GitHub Copilot → Chat → Open Telemetry, turn on **Enable Open Telemetry export**, set **OTLP endpoint** to `http://localhost:4318`, and restart IntelliJ.
 
    ![Settings, GitHub Copilot, Chat, Open Telemetry, with export on and the endpoint set to http://localhost:4318](../screenshots/04-ai-finops/otel-setting.png)
 
