@@ -1,0 +1,36 @@
+name: Problem with a lesson
+description: A step doesn't work as described, a screenshot is out of date, or something is unclear.
+body:
+  - type: dropdown
+    id: lesson
+    attributes:
+      label: Lesson
+      options:
+        - "1. Fundamentals"
+        - "2. Tooling"
+        - "3. Secure execution and governance"
+        - "4. AI FinOps"
+        - "5. App modernization"
+        - "The main README, or setting up"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Which step were you on, what did you expect, and what happened instead? Paste any error messages.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: IntelliJ IDEA, the GitHub Copilot plugin, Java, and your operating system.
+      placeholder: IntelliJ IDEA 2026.3, GitHub Copilot 1.21.1, Java 25, Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Optional. Remove any personal information, such as your name or email address, first.

@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # The lessons pin their dependencies on purpose (lesson 5 is an old app for Copilot to upgrade),
+  # so only the workflow's actions get version updates.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
