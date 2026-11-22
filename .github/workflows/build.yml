@@ -1,0 +1,48 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build lessons
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+      # In lessons 1, 2 and 4, failing tests show attendees what to fix: check that exactly those tests fail.
+      - name: Test lessons 1, 2 and 4
+        run: |
+          check() {
+            lesson=$1
+            shift
+            echo "::group::$lesson"
+            (cd "$lesson" && ./mvnw -B -ntp test -Dmaven.test.failure.ignore=true)
+            echo "::endgroup::"
+            java .github/scripts/CheckFailingTests.java "$lesson" "$@"
+          }
+          check 01-fundamentals CategoryTests.eachProductShowsItsCategory LowStockTests.lowStockSaysOnlyNLeft SearchTests.searchShowsOnlyMatchingProducts
+          check 02-tooling SaleTests.jacketsAreTwentyPercentOff
+          check 04-ai-finops ApiTests.findsOneProductBySku ApiTests.listsAllProducts
+      # Lesson 5's old app must still build and pass its tests, so that attendees can upgrade it.
+      - name: Test lesson 5
+        working-directory: 05-app-modernization
+        run: ./mvnw -B -ntp verify
+      - name: Run lesson 3's price checker
+        working-directory: 03-secure-execution
+        run: |
+          output=$(java supplier/CheckPrices.java)
+          echo "$output"
+          grep -q '^Checked 6 prices: OK' <<< "$output"

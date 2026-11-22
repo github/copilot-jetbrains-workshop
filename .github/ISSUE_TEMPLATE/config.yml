@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: GitHub Copilot for JetBrains IDEs
+    url: https://github.com/microsoft/copilot-intellij-feedback/issues
+    about: Report problems with the GitHub Copilot plugin itself.
+  - name: GitHub Copilot modernization
+    url: https://github.com/microsoft/github-copilot-appmod/issues
+    about: Report problems with the modernization plugin itself.

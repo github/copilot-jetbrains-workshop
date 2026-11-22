@@ -1,0 +1,151 @@
+# Lesson 1 solution: Two features at once
+
+**Fundamentals** · Part 1 of 5 · [The challenge](README.md) · [All lessons](../README.md)
+
+Trail Store needs three features: search, low stock and categories. This solution builds the first two with two Copilot sessions that run at the same time, each in its own git worktree. Then you add the third yourself, with Copilot predicting your next edits.
+
+## Core concepts
+
+**Sessions run in parallel.** A session is one conversation with Copilot, about one task. You can start a second session while the first is still working, and switch between them, so tasks that don't depend on each other don't have to wait in line.
+
+**Worktrees keep sessions apart.** Sessions that share a folder share its files, so one session's unfinished change can break the other's build. A git worktree is a second folder with its own copy of the code, on its own branch, in the same repo. In **Worktree** mode, each session gets its own, starting from your last commit, so neither sees the other's changes.
+
+**Apply brings the work into your project.** A worktree session's changes stay in its worktree until you click **Apply**, which copies them into your project and makes a checkpoint commit on the worktree's own branch. Until then, you can review every change.
+
+**Tests are the finish line.** Each feature has a test that fails now. A prompt that names the test gives Copilot a clear goal, and a way to check its own work.
+
+**Next edit suggestions finish a chain of edits.** Add a field to a record, and every place that creates one needs a value for it. From the edit you just made, Copilot predicts the edits that follow, and you accept each one with **Tab**.
+
+## The plan
+
+Search and low stock don't depend on each other, so you start both at once, in two worktree sessions, and ask each to change only what its feature needs. When both finish, you review their changes and apply them. The categories come last, and by hand: they change `index.html`, as the low stock session does, so you add them on top of that session's work. Then the tests check all three features.
+
+## 1. Start two sessions, each in its own worktree
+
+Both prompts follow the same pattern: make one feature's test pass, change only what that feature needs, and run the test to check.
+
+A worktree session starts from your last commit. If an **Uncommitted Changes** card appears when you send a prompt, click the arrow next to **Copy Changes**, and choose **Skip Changes**.
+
+1. At the top of Chat, click **+** to start a new session. In the row under the chat box, click **Workspace** and choose **Worktree**.
+
+   ![The Workspace menu under the chat box, with Worktree highlighted](../screenshots/01-fundamentals/worktree.png)
+
+2. Send:
+
+   > In 01-fundamentals, make SearchTests pass. Change only what search needs, and run SearchTests to check.
+
+3. Without waiting for the search session to finish, click **+** to start a second session, also in **Worktree** mode, and send:
+
+   > In 01-fundamentals, make LowStockTests pass. Change only what low stock needs, and run LowStockTests to check.
+
+4. At the top of Chat, click **Show Sessions Side Bar**. The chat opens in an editor tab, with the **Sessions** list beside it. Click a session in the list to switch to it.
+
+   ![The low stock session in an editor tab, with both sessions in the Sessions list](../screenshots/01-fundamentals/sessions-side-bar.png)
+
+   *The line under the title names the session's worktree.*
+
+## 2. Apply both sessions' changes
+
+Each session worked in its own worktree, so nothing has changed in your project yet. Review each session's changes, then bring them in.
+
+When a session finishes, the files it changed are listed above the chat box. The list starts collapsed, so click the arrow before its header, such as **1 File Changed**, to open it. Click a file to review the diff, then click **Apply** to copy the changes into your project. Then click the other session in the **Sessions** list and do the same.
+
+**Apply** doesn't show a confirmation when it works: the list just closes. To check, open a changed file in your project. **Apply** also makes a checkpoint commit, so git needs your name and email: see [What you need](../README.md#what-you-need).
+
+![The search session's changed file, with Undo All and Apply](../screenshots/01-fundamentals/apply.png)
+
+![The low stock change to index.html in IntelliJ's diff viewer](../screenshots/01-fundamentals/diff.png)
+
+*Clicking a file opens it in IntelliJ's diff viewer.*
+
+Now only `CategoryTests` fails: search and low stock are in your project, each from its own session.
+
+## 3. Add categories with next edit suggestions
+
+The last feature is a chain of edits. Once `Product` has a category, each of the six products in `Catalog.java` needs one, and the page needs a line to show it. You start each edit, and Copilot suggests the rest.
+
+Do this after you apply both sessions: the low stock session changed `index.html` too. In Settings → GitHub Copilot → Completions, check that **Enable Next Edit Suggestions(NES)** is selected.
+
+![Settings, GitHub Copilot, Completions, with Enable Next Edit Suggestions(NES) selected](../screenshots/01-fundamentals/nes-setting.png)
+
+1. In `Product.java`, add a category after the name:
+
+   ```java
+   public record Product(String sku, String name, String category, int price, int stock) {
+   ```
+
+   `Catalog.java` stops compiling: each product now needs a category. That's the chain that Copilot picks up.
+
+2. In `Catalog.java`, type the first product's category, `"Jackets",`, after its name. Copilot suggests the categories of the other five products. Press **Tab** to accept them. If a suggestion is somewhere else in the file, the first **Tab** jumps to it, and the second accepts it.
+
+   ![A next edit suggestion in Catalog.java that adds a category to the other five products](../screenshots/01-fundamentals/nes-catalog.png)
+
+   *Copilot suggests the remaining categories. The arrow in the gutter means Tab accepts.*
+
+3. In `index.html`, click at the end of the `<h2>` line, and press **Enter**. Copilot suggests the category line, under the product's name. Press **Tab** to accept it:
+
+   ```html
+   <p class="category" th:text="${product.category()}">Jackets</p>
+   ```
+
+   ![A next edit suggestion in index.html that adds the category line](../screenshots/01-fundamentals/nes-index.png)
+
+   *Copilot can suggest this line too. Press Tab to accept it.*
+
+If Copilot doesn't suggest the changes, type them yourself: see [The code](#the-code).
+
+## 4. Run the tests
+
+With all three features in place, run `./mvnw -B -ntp verify` again (on Windows, `.\mvnw.cmd -B -ntp verify`), or click the green run icon next to a test class. All the tests pass.
+
+![CategoryTests passing in IntelliJ's test runner](../screenshots/01-fundamentals/tests-passed.png)
+
+To see the page, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`), and open <http://localhost:8080/?q=boots>.
+
+## What you used
+
+Two features came from two Copilot sessions, working at the same time in their own worktrees, and you reviewed each one before you applied it. The third came from you, with Copilot finishing the chain of edits you started.
+
+- **GitHub Copilot:** worktree sessions, the **Sessions** side bar, **Apply**, next edit suggestions.
+- **IntelliJ IDEA:** editor tabs, the diff viewer, the test runner.
+
+## The code
+
+Copilot's code may look different. That's fine, as long as the tests pass.
+
+Search, in `StoreController.java`:
+
+```java
+import org.springframework.web.bind.annotation.RequestParam;
+
+@GetMapping("/")
+String home(@RequestParam(defaultValue = "") String q, Model model) {
+    String query = q.toLowerCase();
+    model.addAttribute("products", catalog.all().stream()
+            .filter(product -> product.name().toLowerCase().contains(query))
+            .toList());
+    return "index";
+}
+```
+
+Low stock, in `index.html`, in place of the "in stock" line:
+
+```html
+<p th:if="${product.stock() > 5}" th:text="|${product.stock()} in stock|">12 in stock</p>
+<p th:if="${product.stock() > 0 and product.stock() <= 5}" th:text="|Only ${product.stock()} left|">Only 4 left</p>
+```
+
+Categories, in `Catalog.java`:
+
+```java
+new Product("JKT-001", "Trail Rain Jacket", "Jackets", 99, 12),
+new Product("JKT-002", "Storm Shell Jacket", "Jackets", 139, 4),
+new Product("JKT-003", "Summit Waterproof Jacket", "Jackets", 149, 0),
+new Product("BOT-001", "Ridge Hiking Boots", "Boots", 129, 8),
+new Product("PCK-001", "Everyday Trail Pack", "Packs", 59, 10),
+new Product("TNT-001", "Two-Person Tent", "Tents", 189, 5));
+```
+
+---
+
+[← Back to the start](../README.md) · [Next lesson: Tooling →](../02-tooling/README.md)

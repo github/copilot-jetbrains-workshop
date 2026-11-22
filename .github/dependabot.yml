@@ -1,0 +1,20 @@
+version: 2
+updates:
+  # The lessons pin their dependencies on purpose, so only the workflow's actions
+  # and lesson 4's trace viewer image get version updates.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker-compose
+    directory: /04-ai-finops/observability
+    schedule:
+      interval: weekly
+  # Lesson 5's old, vulnerable dependencies are the exercise: attendees upgrade them with Copilot.
+  # Ignoring them here stops security update pull requests for that lesson too.
+  - package-ecosystem: maven
+    directory: /05-app-modernization
+    schedule:
+      interval: weekly
+    ignore:
+      - dependency-name: "*"

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- Lists the lessons so IntelliJ opens them as one Maven project.
+         Each lesson is a standalone app: build it from its own folder with its own Maven wrapper.
+         Lesson 5 isn't listed: attendees open it as its own project, so its upgrade can't touch the other lessons. -->
+    <groupId>com.contoso</groupId>
+    <artifactId>copilot-jetbrains-workshop</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>GitHub Copilot in IntelliJ IDEA workshop</name>
+    <modules>
+        <module>01-fundamentals</module>
+        <module>02-tooling</module>
+        <module>04-ai-finops</module>
+    </modules>
+</project>
