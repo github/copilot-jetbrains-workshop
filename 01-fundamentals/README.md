@@ -94,7 +94,7 @@ Write your own prompts: steps 1 and 2 say what to ask for. Name the lesson's fol
 
    - In `index.html`, click at the end of the `<h2>` line, and press **Enter**. Copilot suggests the category line: press **Tab** to accept it.
 
-   If no suggestion appears, or Copilot fills in only some of the categories, type the rest yourself.
+   If no suggestion appears, or Copilot fills in only some of the categories, or different ones, such as Footwear for the boots, type the right ones yourself.
 
 5. **Check.** Run the tests again: they all pass. To see the page, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`), and open <http://localhost:8080/?q=boots>.
 

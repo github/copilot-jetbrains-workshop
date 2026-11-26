@@ -58,7 +58,7 @@ Don't click **Apply** yet: run 2 must start from the same code as run 1.
 
 Now run the same task again, with one setting changed.
 
-Start another new session in **Worktree** mode. If you used Fusion for run 1, choose Fusion **Max**. If you used a single model, keep that model and choose **Max**, or pick a second model at the same effort level. Send the same prompt, and record its numbers. If the **Agent Debug Logs** tab still shows run 1, click **Agent Debug Logs** at the top of the tab to go back to the list of sessions, and pick the newest.
+Start another new session in **Worktree** mode. If you used Fusion for run 1, choose Fusion **Max**. If you used a single model, keep that model and choose **Max**, or pick a second model at the same effort level. Send the same prompt, and record its numbers. With Fusion, Max can cost tens of AI credits, even for this small task. If the **Agent Debug Logs** tab still shows run 1, click **Agent Debug Logs** at the top of the tab to go back to the list of sessions, and pick the newest.
 
 ## 4. Keep the higher-effort run
 
@@ -92,15 +92,15 @@ This needs Docker, installed and running.
 
    ![docker-compose.yml in the editor, with the run icon next to services:](../screenshots/04-ai-finops/compose.png)
 
-2. In Settings → GitHub Copilot → Chat → Open Telemetry, turn on **Enable Open Telemetry export**, set **OTLP endpoint** to `http://localhost:4318`, and restart IntelliJ.
+2. In Settings → GitHub Copilot → Chat → Open Telemetry, turn on **Enable Open Telemetry export**, set **OTLP endpoint** to `http://localhost:4318`, and restart IntelliJ: choose Help → Find Action, type `Restart IDE`, and press Enter.
 
    ![Settings, GitHub Copilot, Chat, Open Telemetry, with export on and the endpoint set to http://localhost:4318](../screenshots/04-ai-finops/otel-setting.png)
 
-3. Run a session, then open the Aspire dashboard at <http://localhost:18888>, and choose **Traces**. In a trace, each `execute_tool` span is one tool call, such as `execute_tool view`.
+3. Run a session, then open the Aspire dashboard at <http://localhost:18888>, and choose **Traces**. In a trace, each `execute_tool` span is one tool call, such as `execute_tool view`. To list only those, type `execute_tool` in the **Filter** box above the spans, next to **Type**. The **Filter** box on the left filters the telemetry sources, not the spans.
 
    ![A Copilot session's invoke_agent trace in the Aspire dashboard, filtered on execute_tool: execute_tool rg, powershell and view spans, each with a permission span](../screenshots/04-ai-finops/traces.png)
 
-   *Run 1's trace, with `execute_tool` typed in its **Filter** box. The tool names depend on the model.*
+   *Run 1's trace, filtered on `execute_tool`. The tool names depend on the model.*
 
 When you're done, stop the dashboard with `docker compose down`, and turn off the export.
 

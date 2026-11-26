@@ -25,7 +25,7 @@ Models read and write text in tokens, which are small pieces of words. Copilot d
 
 ### Copilot Fusion
 
-With Fusion, you don't pick a model. You pick an effort level, and Copilot picks the models, and how to use them: one model for a task, or one that drafts and others that check its work. The Fusion picker shows **Standard**, **High** and **Max**. In this lesson, if you have Fusion, compare Standard and Max. Max can use stronger models, and more than one per task, so it usually costs more. Turn on **Fusion** in the model picker, in the chat box.
+With Fusion, you don't pick a model. You pick an effort level, and Copilot picks the models, and how to use them: one model for a task, or one that drafts and others that check its work. The Fusion picker shows **Standard**, **High** and **Max**. In this lesson, if you have Fusion, compare Standard and Max. Max can use stronger models, and more than one per task, so it usually costs more: even for this small task, it can cost tens of AI credits. Turn on **Fusion** in the model picker, in the chat box.
 
 Fusion is still rolling out, and it isn't in every plan. If it isn't in yours, leave it off, or turn it off. Pick a model, and compare it at two effort levels, such as **Medium** and **Max**, or compare two models at the same effort level. The per-model effort picker offers **Low**, **Medium**, **High**, **Extra High** and **Max**: a higher level lets the model reason for longer before it answers, which uses more tokens. See [About GitHub Copilot Fusion](https://docs.github.com/en/copilot/concepts/models/copilot-fusion).
 
@@ -98,7 +98,7 @@ The **Credits** below Copilot's answer are the same unit as **Copilot Usage (AIC
 
 If Copilot can't run Maven, and the output says `Access is denied`, the sandbox from lesson 3 is on. In Settings → GitHub Copilot → Sandbox, turn off **Enable Sandbox by default for new Copilot sessions**, and start the run again in a new session.
 
-For traces of both runs, set up OpenTelemetry (optional) before run 1: turning on the export needs an IntelliJ restart.
+For traces of both runs, set up OpenTelemetry (optional) before run 1: turning on the export needs an IntelliJ restart. To restart, choose Help → Find Action, type `Restart IDE`, and press Enter.
 
 </details>
 

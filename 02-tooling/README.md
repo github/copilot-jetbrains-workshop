@@ -42,7 +42,7 @@ Turn it on in Settings → MCP Server (in some versions, under AI), or search Se
 
 ### Browser use, optional
 
-The tests check the page's HTML, but you might also want to see a change the way a shopper does. With browser use, Copilot opens pages in your own browser and reads them, so it can check a change in the running app. It's a preview, and still rolling out. It needs Node.js 22 or later, and Chrome or Edge with the GitHub Copilot browser extension. Turn on **Enable Browser Use**, under Settings → GitHub Copilot → Chat (search Settings for Browser Use): if it isn't there, you don't have browser use yet. Copilot then uses your browser when a task needs it, or when you use the `/browser-use` command. See [Using GitHub Copilot in your IDE to interact with your browser](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/browser-use).
+The tests check the page's HTML, but you might also want to see a change the way a shopper does. With browser use, Copilot opens pages in your own browser and reads them, so it can check a change in the running app. It's a preview, and still rolling out. It needs Node.js 22 or later, and Chrome or Edge with the GitHub Copilot browser extension. If your version has **Enable Browser Use**, under Settings → GitHub Copilot → Chat (search Settings for Browser Use), turn it on. Then type `/` in the chat box: if the list doesn't have `/browser-use`, you don't have browser use yet. Copilot uses your browser when a task needs it, or when you use the `/browser-use` command. See [Using GitHub Copilot in your IDE to interact with your browser](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/browser-use).
 
 ## Get started
 

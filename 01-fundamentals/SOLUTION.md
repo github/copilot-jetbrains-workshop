@@ -92,7 +92,7 @@ Do this after you apply both sessions: the low stock session changed `index.html
 
    *Copilot can suggest this line too. Press Tab to accept it.*
 
-If Copilot doesn't suggest the changes, type them yourself: see [The code](#the-code).
+If Copilot doesn't suggest the changes, or suggests different categories, such as Footwear for the boots, type them yourself: see [The code](#the-code).
 
 ## 4. Run the tests
 

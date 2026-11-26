@@ -131,7 +131,7 @@ The tests check the page's HTML. To see the new prices the way a shopper does, l
 
 Browser use is a preview. It needs Node.js 22 or later, and Chrome or Edge with the **GitHub Copilot** browser extension. GitHub's guide, [Using GitHub Copilot in your IDE to interact with your browser](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/browser-use), covers JetBrains IDEs. In short:
 
-1. Turn on **Enable Browser Use**, under Settings → GitHub Copilot → Chat, and click **OK**. To find it, search Settings for Browser Use. If that setting isn't there, you don't have browser use yet.
+1. If your version has **Enable Browser Use**, under Settings → GitHub Copilot → Chat, turn it on, and click **OK**. To find it, search Settings for Browser Use. Then type `/` in the chat box: if the list doesn't have `/browser-use`, you don't have browser use yet.
 2. In 02-tooling, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`).
 3. In a new session, send:
 
@@ -139,7 +139,7 @@ Browser use is a preview. It needs Node.js 22 or later, and Chrome or Edge with 
 
    A permission prompt appears for each site Copilot opens: allow it. The browser also shows a banner that it's being debugged. That's expected.
 
-Copilot uses your browser when a task needs it, as here. You can also use the `/browser-use` command to tell it to use your browser. It doesn't fall back to another way to open the page: if you don't have browser use, or no browser is connected, open <http://localhost:8080> yourself.
+Copilot uses your browser when a task needs it, as here. You can also use the `/browser-use` command to tell it to use your browser. If you don't have browser use, or no browser is connected, Copilot may read the page's HTML with a terminal command instead, as the tests do. To see the page the way a shopper does, open <http://localhost:8080> yourself.
 
 Stop the store with **Ctrl+C** when you're done.
 
