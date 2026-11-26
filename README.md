@@ -2,6 +2,8 @@
 
 Each lesson has a simple challenge to solve in IntelliJ IDEA with GitHub Copilot, and a separate solution that shows how, with screenshots.
 
+📊 Slides: [GitHub Copilot in IntelliJ IDEA workshop deck](slides/GitHub-Copilot-IntelliJ-Workshop.pptx)
+
 <p align="center"><img src="screenshots/landing.png" alt="GitHub Copilot in IntelliJ IDEA workshop: Copilot Chat adding search to Trail Store, beside the store showing only Ridge Hiking Boots" width="800"></p>
 
 | Lesson | Topic | Features | Challenge | Solution | Time |

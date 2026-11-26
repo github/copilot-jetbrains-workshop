@@ -96,7 +96,11 @@ This needs Docker, installed and running.
 
    ![Settings, GitHub Copilot, Chat, Open Telemetry, with export on and the endpoint set to http://localhost:4318](../screenshots/04-ai-finops/otel-setting.png)
 
-3. Run a session, then open the Aspire dashboard at <http://localhost:18888>, and choose **Traces**. In a trace, each `execute_tool` span is one tool call, such as `execute_tool grep`.
+3. Run a session, then open the Aspire dashboard at <http://localhost:18888>, and choose **Traces**. In a trace, each `execute_tool` span is one tool call, such as `execute_tool view`.
+
+   ![A Copilot session's invoke_agent trace in the Aspire dashboard, filtered on execute_tool: execute_tool rg, powershell and view spans, each with a permission span](../screenshots/04-ai-finops/traces.png)
+
+   *Run 1's trace, with `execute_tool` typed in its **Filter** box. The tool names depend on the model.*
 
 When you're done, stop the dashboard with `docker compose down`, and turn off the export.
 
