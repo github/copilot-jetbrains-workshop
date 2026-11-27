@@ -133,7 +133,7 @@ Browser use is a preview. It needs Node.js 22 or later, and Chrome or Edge with 
 
 1. In Settings → GitHub Copilot → General, check that **Send usage telemetry** is on. Previews such as browser use reach you through experiments, which are off without telemetry. If you turn it on, click **OK**, and restart IntelliJ: choose Help → Find Action, type `Restart IDE`, and press Enter. If Settings has **Enable Browser Use** (search Settings for Browser Use), turn that on too.
 2. Open Chrome or Edge, the one with the extension, and leave it open. Copilot can only use a browser that's running.
-3. In a new session, type `/browser-use` in the chat box. The list shows `/skill:browser-use`, so you have browser use. Clear the chat box.
+3. In a new session, type `/browser-use` in the chat box. If the list shows `/skill:browser-use`, you have browser use. Clear the chat box. If it's still missing, open **Customizations** at the top of Chat, check that **browser-use** is ticked under **Plugins**, and start a new session.
 
    ![The chat box's command list, showing /skill:browser-use](../screenshots/02-tooling/browser-use-skill.png)
 
