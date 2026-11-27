@@ -45,7 +45,7 @@ Fork this repo, clone your fork, and open the folder in IntelliJ IDEA. Then star
 
 Each lesson's folder has the challenge in `README.md` and the solution in `SOLUTION.md`. [.github/copilot-instructions.md](.github/copilot-instructions.md) asks Copilot to stay inside the lesson's folder: it's a request, not a restriction. Lessons 1, 2, 4 and 5 are copies of Trail Store, a small Spring Boot application. In lessons 1, 2 and 4, failing tests show what to fix. Lesson 5's copy is an old one, for Copilot to upgrade. The lessons don't depend on each other.
 
-Browser use, the cloud sandbox and Copilot Fusion are still rolling out, so you might not have them yet. You can still finish every lesson without them.
+Browser use, the cloud sandbox and Copilot Fusion are previews, and Fusion isn't in every plan. Previews reach you through GitHub's experiments, which are off without telemetry, so keep **Send usage telemetry** on, in Settings → GitHub Copilot → General. You can still finish every lesson without them.
 
 ### How to work through a lesson
 

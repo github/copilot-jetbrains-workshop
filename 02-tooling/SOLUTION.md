@@ -129,17 +129,24 @@ IntelliJ renames the method and every call to it, so the rename changes only `Ca
 
 The tests check the page's HTML. To see the new prices the way a shopper does, let Copilot open the store in your browser.
 
-Browser use is a preview. It needs Node.js 22 or later, and Chrome or Edge with the **GitHub Copilot** browser extension. GitHub's guide, [Using GitHub Copilot in your IDE to interact with your browser](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/browser-use), covers JetBrains IDEs. In short:
+Browser use is a preview. It needs Node.js 22 or later, and Chrome or Edge with the [GitHub Copilot](https://chromewebstore.google.com/detail/github-copilot/hblomdgalaelcilcdepgohfcogjiijhe) browser extension. GitHub's guide, [Using GitHub Copilot in your IDE to interact with your browser](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/browser-use), covers JetBrains IDEs. In short:
 
-1. If your version has **Enable Browser Use**, under Settings → GitHub Copilot → Chat, turn it on, and click **OK**. To find it, search Settings for Browser Use. Then type `/` in the chat box: if the list doesn't have `/browser-use`, you don't have browser use yet.
-2. In 02-tooling, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`).
-3. In a new session, send:
+1. In Settings → GitHub Copilot → General, check that **Send usage telemetry** is on. Previews such as browser use reach you through experiments, which are off without telemetry. If you turn it on, click **OK**, and restart IntelliJ: choose Help → Find Action, type `Restart IDE`, and press Enter. If Settings has **Enable Browser Use** (search Settings for Browser Use), turn that on too.
+2. Open Chrome or Edge, the one with the extension, and leave it open. Copilot can only use a browser that's running.
+3. In a new session, type `/browser-use` in the chat box. The list shows `/skill:browser-use`, so you have browser use. Clear the chat box.
+
+   ![The chat box's command list, showing /skill:browser-use](../screenshots/02-tooling/browser-use-skill.png)
+
+4. In 02-tooling, start the store with `./mvnw spring-boot:run` (on Windows, `.\mvnw.cmd spring-boot:run`).
+5. In the same session, send:
 
    > Open http://localhost:8080 and tell me the price of each jacket.
 
    A permission prompt appears for each site Copilot opens: allow it. The browser also shows a banner that it's being debugged. That's expected.
 
-Copilot uses your browser when a task needs it, as here. You can also use the `/browser-use` command to tell it to use your browser. If you don't have browser use, or no browser is connected, Copilot may read the page's HTML with a terminal command instead, as the tests do. To see the page the way a shopper does, open <http://localhost:8080> yourself.
+   ![Copilot's chat, using browser-use tools to read the jacket prices: $79, $111 and $119](../screenshots/02-tooling/browser-use.png)
+
+Copilot uses your browser when a task needs it, as here. You can also pick `/skill:browser-use` in the chat box to tell it to use your browser. If you don't have browser use, or no browser is connected, Copilot may read the page's HTML with a terminal command instead, as the tests do. To see the page the way a shopper does, open <http://localhost:8080> yourself.
 
 Stop the store with **Ctrl+C** when you're done.
 

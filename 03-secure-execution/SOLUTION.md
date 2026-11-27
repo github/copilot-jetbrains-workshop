@@ -22,7 +22,7 @@ The supplier's price checker does its job, and then reads a file in your home fo
 
 First, make the pretend secret, as in the README's [Get started](README.md#get-started). It's a canary: if a command can read it, it could read your real secrets too.
 
-Then run the supplier's tool twice, with the same prompt: once without the sandbox, to see it read the secret, and once in the sandbox, to see the same read fail. Both runs use the same prompt and read the same path, so the sandbox is what makes the difference. Last, see how an admin makes the sandbox a rule, try the cloud sandbox if you have it, and clean up.
+Then run the supplier's tool twice, with the same prompt: once without the sandbox, to see it read the secret, and once in the sandbox, to see the same read fail. Both runs use the same prompt and read the same path, so the sandbox is what makes the difference. Last, see how an admin makes the sandbox a rule, try the cloud sandbox, and clean up.
 
 ## 1. Run the tool without the sandbox
 
@@ -109,11 +109,9 @@ If your organization already manages Copilot on that computer, for example with 
 
 The local sandbox limits what a command can reach on your computer. The cloud sandbox takes your computer out of the picture.
 
-The cloud sandbox is in preview, and rolling out in phases. In the row under the chat box, change **This computer** to **Cloud sandbox**. The session runs on a Linux computer that GitHub hosts, in a clone of your GitHub fork, so your local files aren't there at all. The cloud session's model picker is different from a **This computer** session. Unlike the local sandbox, the cloud sandbox is billed by usage: compute and memory while the session runs, and storage while it's stopped. See [Running a session in a cloud sandbox](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/chat-with-copilot/chat-in-ide?tool=jetbrains#running-a-session-in-a-cloud-sandbox) and [About cloud sandboxes for GitHub Copilot](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/about-cloud-sandboxes).
+The cloud sandbox is in preview. In the row under the chat box, change **This computer** to **Cloud sandbox**. If it isn't listed, turn on **Send usage telemetry** in Settings → GitHub Copilot → General, and restart IntelliJ: previews reach you through experiments, which are off without telemetry. The session runs on a Linux computer that GitHub hosts, in a clone of your GitHub fork, so your local files aren't there at all. The cloud session's model picker is different from a **This computer** session. Unlike the local sandbox, the cloud sandbox is billed by usage: compute and memory while the session runs, and storage while it's stopped. See [Running a session in a cloud sandbox](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/chat-with-copilot/chat-in-ide?tool=jetbrains#running-a-session-in-a-cloud-sandbox) and [About cloud sandboxes for GitHub Copilot](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/about-cloud-sandboxes).
 
-![The environment picker under the chat box, listing This computer and Environments](../screenshots/03-secure-execution/environment-picker.png)
-
-*The environment picker. **Cloud sandbox** is listed here once it reaches your account.*
+![The environment picker under the chat box, listing This computer, Cloud sandbox and Environments](../screenshots/03-secure-execution/environment-picker.png)
 
 ## 5. Clean up
 

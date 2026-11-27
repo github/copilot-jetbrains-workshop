@@ -38,7 +38,7 @@ To see what's managed on your computer, open **Policy Diagnostics** from the Opt
 
 ### Cloud sandbox, optional
 
-The local sandbox keeps Copilot's commands away from your files. The cloud sandbox goes further: it runs the whole session on a computer that GitHub hosts, in a clone of your GitHub fork, so your local files aren't there at all. Its model picker is different from a **This computer** session. Pick it in the environment picker under the chat box. It's in preview, and you might not have it yet. Unlike the local sandbox, it's billed by usage: compute and memory while the session runs, and storage while it's stopped. See [About cloud sandboxes for GitHub Copilot](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/about-cloud-sandboxes).
+The local sandbox keeps Copilot's commands away from your files. The cloud sandbox goes further: it runs the whole session on a computer that GitHub hosts, in a clone of your GitHub fork, so your local files aren't there at all. Its model picker is different from a **This computer** session. Pick it in the environment picker under the chat box. It's in preview: if the picker doesn't list it, turn on **Send usage telemetry** in Settings → GitHub Copilot → General, and restart IntelliJ. Previews reach you through experiments, which are off without telemetry. Unlike the local sandbox, it's billed by usage: compute and memory while the session runs, and storage while it's stopped. See [About cloud sandboxes for GitHub Copilot](https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/about-cloud-sandboxes).
 
 ## Get started
 
@@ -98,7 +98,7 @@ The tool reads `supplier/prices-2027-02.csv`, so it must run from the `03-secure
 
 If a step says **Invoked**, IntelliJ's MCP server ran the tool, outside the sandbox. Turn the server off, and try again in a new session.
 
-If the sandboxed run fails with no `OK` line, the local sandbox may not work on your computer: check the requirements in [Get started](#get-started). Use the cloud sandbox instead, which is billed by usage: in the environment picker under the chat box, change **This computer** to **Cloud sandbox**, and send the same prompt. Your files aren't on that computer at all, so the tool can't read `canary.txt` there either. If you don't have the cloud sandbox yet, read the sandboxed run in the [solution](SOLUTION.md#2-run-it-in-the-sandbox).
+If the sandboxed run fails with no `OK` line, the local sandbox may not work on your computer: check the requirements in [Get started](#get-started). Use the cloud sandbox instead, which is billed by usage: in the environment picker under the chat box, change **This computer** to **Cloud sandbox**, and send the same prompt. Your files aren't on that computer at all, so the tool can't read `canary.txt` there either. If the picker doesn't list **Cloud sandbox**, read the sandboxed run in the [solution](SOLUTION.md#2-run-it-in-the-sandbox).
 
 </details>
 
